@@ -61,7 +61,7 @@
                     Imagen del producto
                 </label>
                 {{#if data}}
-                    <img src={{data.imageUrl}} alt={{title}} />
+                    <img id="productImage" src={{data.imageUrl}} alt="{{data.title}}"  />
                 {{/if}}
                 <input class="product_image" id="image" type="file" name="image" value="Selecione una imagen"/>
             </div>
@@ -87,7 +87,7 @@
                 <label for="" class="form_group_label">
                     Agregue la descripción del producto
                 </label>
-                <textarea id="desc" name="desc" id="desc">{{#if data }} {{data.desc}} {{/if}}</textarea>
+                <textarea id="desc" name="desc" id="desc">{{#if data }}{{data.desc}}{{/if}}</textarea>
             </div>
             <div class="button_group">
                 <input type="button" onclick="onSubmit({{#if key}}'{{key}}'{{/if}})" value="Agregar" class="button button_add"/>

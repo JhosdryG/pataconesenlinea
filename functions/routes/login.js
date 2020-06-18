@@ -30,7 +30,6 @@ router.get('/login', (req, res) => {
 //    Authenticate user and log, if incorrect return to login
    router.post('/login', async (req, res) => {
      const valid = await verifyUser(req.body);
-     console.log(valid);
      const pass = 'sd68ad1s';
        if(valid){
         bcrypt.hash(pass, 6, (err, hash) => {

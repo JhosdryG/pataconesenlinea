@@ -12,8 +12,12 @@ const getFirebase = async () => {
 getFirebase();
 
 
-const validateForm = () => {
-    const testFile = document.getElementById('image').files[0]
+const validateForm = (setkey) => {
+
+    let testFile;
+    if(setkey) testFile = true;
+    else testFile =  document.getElementById('image').files[0];
+    
     // Validate form has not empty values
     if(
         getValue('title').trim() !== '' &&
@@ -56,23 +60,29 @@ let key;
 
 // Executes when form is submited
 const onSubmit = (setkey) => {
-    if(!validateForm()) return null;
+    if(!validateForm(setkey)) return null;
     // Set key
     key = setkey;
     // Get file
     file = document.getElementById('image').files[0];
-    let storageRef = firebase.storage().ref('products/' + file.name);
-    // Upload file
-    Swal.fire({
-        title: 'Cargando producto...',
-        text: 'Esto puede demorar un momento.',
-        allowOutsideClick: false,
-        onBeforeOpen: () => {
-            Swal.showLoading();
-        }
-    });
-    const task = storageRef.put(file);
-    task.on('state_changed', null, onLoadError, onLoadImage);
+
+    // Si es añadir producto o es uno ya existente pero va a cambiar la imagen
+    if(!key || (key && file) ){
+        let storageRef = firebase.storage().ref('products/' + file.name);
+        // Upload file
+        Swal.fire({
+            title: 'Cargando producto...',
+            text: 'Esto puede demorar un momento.',
+            allowOutsideClick: false,
+            onBeforeOpen: () => {
+                Swal.showLoading();
+            }
+        });
+        const task = storageRef.put(file);
+        task.on('state_changed', null, onLoadError, onLoadImage);
+    }else if(!file){
+        onLoadImage();
+    }
 };
 
 
@@ -106,6 +116,15 @@ const getProductData = () => new Promise((resolve, reject) => {
             }
             resolve(product);
         });
+    }else{
+        const product = {
+            imageUrl : document.getElementById("productImage").src,
+            title: getValue('title'),
+            detailPrice: getValue('detailPrice'),
+            bigPrice: getValue('bigPrice'),
+            desc: getValue('desc')
+        }
+        resolve(product);
     }
 });
 
@@ -137,7 +156,14 @@ const fetchData = product => {
                 icon: 'success',
                 allowOutsideClick: false,
                 preConfirm: () => {
-                    clearField();
+                    if(key){
+                        console.log(product.imageUrl);
+                        console.log(document.getElementById("productImage"));
+                        document.getElementById("productImage").src = product.imageUrl;
+                    }else{
+                        clearField();
+                    }
+                    
                 }
             });
         }else if(res.status === 500){
