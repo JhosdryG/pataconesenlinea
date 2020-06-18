@@ -1,4 +1,5 @@
 
+
 // Initalizate Firebase app
 const getFirebase = async () => {
     // production
@@ -188,6 +189,62 @@ const fetchInfoConstructor = product => {
     return info;
 }
 
+const deleteProduct = (key, pass, urlHash) => {
+    console.log('hola bebe');
+
+    const info = {
+        method: 'DELETE',
+        body: JSON.stringify({key, isValid: true}),
+        headers:{
+            'Content-Type': 'application/json'
+        }
+    }
+    // Production
+    //const fetchUrl = 'https://jgp-admin.web.app/admin/product/';   
+    // Development    
+    const fetchUrl = 'http://localhost:5000/admin/product';
+
+    Swal.fire({
+        title: '¿Está seguro?',
+        text: "Esta acción es irreversible",
+        icon: 'warning',
+        showCancelButton: true,
+        cancelButtonText: 'Cancelar',
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Eliminar',
+        allowOutsideClick: false,
+        preConfirm: () => {
+            return fetch(fetchUrl,info)
+            .then(res => res.json())
+            .then(res => {
+                console.log('hola mundo');
+                if(res.status === 200){
+                    // something
+                  Swal.fire({
+                      title: 'Producto eliminado correctamente',
+                      text: "Tal vez deba esperar unos minutos antes de ver reflejados los cambios.",
+                      icon: 'success',
+                      allowOutsideClick: false,
+                      preConfirm: () => {
+                          location.href = `/admin/productos?${pass}=${urlHash}`;
+                      }  
+                  });
+                }else if (res.status === 500){
+                    // something else
+                    Swal.fire({
+                      title: 'Ha ocurrido un error',
+                      text: res.err,
+                      icon: 'error',
+                      allowOutsideClick: false
+                  });
+                }
+            });
+        }
+      });
+}
+
+
 const clearField = () => {
     document.getElementById('image').value = "";
     document.getElementById('title').value = "";
@@ -239,6 +296,9 @@ function keepTrying(triesRemaining, storageRef) {
         }
     });
 }
+
+
+
 
 
 // Allows only number on price inputs

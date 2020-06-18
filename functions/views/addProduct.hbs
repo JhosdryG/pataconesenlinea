@@ -91,9 +91,9 @@
             </div>
             <div class="button_group">
                 <input type="button" onclick="onSubmit({{#if key}}'{{key}}'{{/if}})" value="Agregar" class="button button_add"/>
-                <a href="/admin/product/?{{{pass}}}={{{urlHash}}}" class="button button_back">Volver</a>
+                <a href="/admin/productos/?{{{pass}}}={{{urlHash}}}" class="button button_back">Volver</a>
                 {{#if key}}
-                <a href="/admin/product/{{key}}?{{{pass}}}={{{urlHash}}}" class="button button_back">Eliminar</a>
+                <input type="button" value="Eliminar" onclick="deleteProduct('{{key}}','{{pass}}','{{urlHash}}')" />
                 {{/if}}
             </div>
         </form>
