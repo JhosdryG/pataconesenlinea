@@ -1,0 +1,175 @@
+
+
+.nav_container
+    position: relative
+    z-index: 2
+
+    .alternative-menu
+        position: absolute
+        top: 0
+        left: 0
+        width: 100%
+        max-width: 100%
+        height: 100%
+        background-color: $dark
+        z-index: 1
+        transition: all .4s ease-out
+
+        display: flex
+        flex-direction: column
+        align-items: center
+        justify-content: center
+
+        .menu_link
+            font-size: 1.5rem
+
+            .fas
+                color: $primary-light
+                margin: 0 10px
+
+            .icon_text_alternative
+                color: #ffffff
+                font-weight: bold
+
+
+        &.active
+            top: 98%
+
+        @include tablet()
+            display: none
+
+
+
+
+.nav_container
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    @include tablet()
+        width: 55px
+        height: 100vh 
+
+.nav
+    position: relative
+    background-color: $dark
+    z-index: 2
+
+    @include tablet()
+        height: 100%
+        width: 55px
+        transition: all .4s ease-out
+
+        &.active
+            width: 170px
+
+
+    .container
+        position: relative
+        display: flex
+        align-items: center
+        justify-content: space-between
+        margin: 0
+        padding: 20px 10px
+        width: 100%
+        max-width: 100%
+        min-height: 68px
+        background-color: $dark
+
+        .logo
+            margin-right: 20px
+
+        .icon_text
+            display: none
+
+        .main_nav_buttons 
+            display: flex
+            align-items: center
+            justify-content: center
+
+        @include tablet()
+            flex-direction: column
+            align-items: flex-start
+            padding: 20px 0px
+            overflow: hidden
+
+
+
+            .logout_button
+                display: flex
+                justify-content: flex-start
+                align-items: center
+                min-width: 190px
+
+                .fas 
+                    padding: 0
+                    margin-right: 20px
+                    max-width: 60px
+
+
+            .nav_buttons
+                cursor: pointer
+                &:hover
+                    background-color: #3068bb
+
+                .icon_link
+                    display: flex
+                    align-items: center
+                    width: 100%
+                    height: 100%
+                    padding: 10px
+                    cursor: pointer
+                    &:hover
+                        background-color: #3068bb
+
+                    &.active 
+                        background-color: #3068bb
+
+                .icon_text
+                    display: inline
+                    color: #ffffff
+                    font-weight: bold
+                
+
+                
+
+            .main_nav_buttons  
+                display: flex
+                flex-direction: column
+                justify-content: center
+                align-items: center
+
+                .logo
+                    margin-right: 0
+                    padding-left: 10px
+                    margin-bottom: 20px
+                    min-width: 190px
+
+                .menu_icon
+                    display: flex
+                    align-items: center
+                    justify-content: flex-start
+                    padding: 10px
+                    min-width: 190px
+                    cursor: pointer
+
+                    .fas 
+                        padding-left: 5px
+                        margin-right: 20px
+                
+                      
+
+        .fas
+            font-size: 1.8rem
+            color: $primary-light
+            cursor: pointer
+
+
+        .options
+            display: none
+            @include tablet()
+                display: block
+                min-width: 190px
+
+                .fas
+                    margin-right: 20px

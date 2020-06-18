@@ -1,0 +1,73 @@
+@import ../vars
+@import ../global
+@import ../mixins
+
+.products_list
+    @include card-layout(2,4,20px)
+
+    .product
+        padding: 20px
+        display: flex
+        flex-direction: column
+        background: rgb(2,107,217)
+        background: linear-gradient(0deg, rgba(2,107,217,1) 3%, rgba(136,215,255,1) 100%)
+        border: none
+        border-radius: 10px
+        cursor: pointer
+        transition: all .4s ease-out
+        &:hover
+            transform: scale(1.05)
+            background: rgb(0,68,140)
+            background: linear-gradient(0deg, rgba(0,68,140,1) 3%, rgba(26,141,199,1) 100%)
+
+        &_imgbox_img
+            width: 100%
+            object-fit: cover
+            border-radius: 10px
+
+        &_info
+            display: flex
+            flex-direction: column
+
+
+            &_titlebox
+                color: #ffffff
+                font-weight: bold
+                margin-bottom: 20px
+
+                &_title
+                    margin-bottom: 10px
+                    text-align: left
+                
+                &_price
+                    font-size: 1.2rem
+                    text-align-last: left
+
+                    
+                   
+
+            &_desc p 
+                color: #ffffff
+                line-height: 1.4rem
+
+                
+.header .container
+    display: flex
+    justify-content: space-between
+    align-items: center
+
+    #addProduct
+        display: block
+        padding: 15px 25px
+        color: #ffffff
+        background-color: $primary
+        border: none
+        border-radius: 10px
+        font-size: 1.2rem
+        cursor: pointer
+        &:hover
+            background-color: $primary-dark
+
+.products_alert
+    color: $primary-light
+    font-size: 1.4rem

@@ -1,0 +1,60 @@
+@import ../vars
+@import ../global
+@import ../mixins
+
+body
+    background-color: $primary-dark
+
+
+@import _menu
+
+.header
+    position: sticky
+    top: 68px
+    left: 0
+    margin-top: 68px
+    width: 100%
+    padding: 30px
+    background: rgb(2,107,217)
+    background: linear-gradient(90deg, rgba(2,107,217,1) 0%, rgba(13,169,245,1) 100%)
+    z-index: 1
+
+    h2 
+        text-align: center
+        color: #ffffff
+        @include tablet()
+            text-align: left
+
+
+    @include tablet()
+        top: 0
+        margin-top: 0
+        margin-left: 55px
+        height: 20%
+        max-width: calc( 100% - 55px )
+
+.main
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 30px
+    background-color: $primary-dark
+    
+
+    h2 
+        text-align: center
+        color: #ffffff
+
+    @include tablet()
+        padding: 50px
+        height: 70%
+        margin-left: 55px
+        overflow: auto
+        max-width: calc( 100% - 55px )
+
+                    
+
+
+            
+        
+            

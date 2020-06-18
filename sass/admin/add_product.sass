@@ -1,0 +1,81 @@
+@import ../vars
+@import ../global
+@import ../mixins
+
+.form
+    padding: 20px
+    background: $primary
+    border: none
+    border-radius: 6px
+    width: 100%
+    max-width: 100%
+
+    @include tablet()
+        width: 50%
+        padding: 40px 60px
+
+
+    &_group
+        display: flex
+        flex-direction: column
+
+        &_label
+            margin: 25px 0 10px 0
+            color: #ffffff
+            font-size: 1rem
+
+        & [type="text"]
+            padding: 6px
+            font-size: 1rem
+            color: $dark
+            border: none
+            border-radius: 6px
+
+            background-color: #e9e9e9
+
+        & textarea
+            padding: 6px
+            font-size: 1rem
+            color: $dark
+            border: none
+            border-radius: 6px
+            resize: none
+            width: 100%
+            height: 100px
+            background-color: #e9e9e9
+
+        & [type="file"]
+            display: inline-block
+            padding: 10px 15px
+            border: none
+            border-radius: 6px
+            background-color: $primary-dark
+            color: #ffffff
+
+    .button_group
+        display: flex
+        flex-direction: column
+        padding: 20px 0
+
+        @include tablet()
+            flex-direction: row
+
+        .button
+            display: inline-block
+            margin: 10px 0
+            padding: 10px 15px
+            width: 100%
+            font-size: 1.1rem
+            text-align: center
+            color: #ffffff
+            border: none
+            border-radius: 6px
+            cursor: pointer
+
+            &_add
+                background-color: #3068bb
+                @include tablet()
+                    margin-right: 20px
+
+            &_back
+                background-color: $primary-dark
