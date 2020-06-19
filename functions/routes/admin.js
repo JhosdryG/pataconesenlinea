@@ -1,6 +1,8 @@
 const db = require('./firebase');
 const { Router } = require('express');
 const {verifyLog} = require('./middlewares');
+const bcrypt = require('bcrypt');
+const url = require('url'); 
 
 const router = Router();
 
@@ -75,8 +77,16 @@ router.get('/admin/product/:id', verifyLog,  (req, res) => {
 
     db.ref('products/' + key).once('value', (snapshot) => {
         const data = snapshot.val();
-        console.log(data);
-        res.render('addProduct', {data, urlHash, pass, key} );
+        if(data){
+            res.render('addProduct', {data, urlHash, pass, key} );
+        }else{
+            res.redirect(url.format({
+                pathname:"/admin/productos",
+                query:{
+                  [pass]: encodeURIComponent(urlHash)
+                },
+              }));
+        }
     }).catch(err => {
         console.log(err);
         res.redirect('/login');
@@ -105,10 +115,15 @@ router.put('/admin/product', (req, res) => {
 });
 
 // delete product
-router.get('/admin/product/:id', verifyLog,  (req, res) => {
-    const pass = 'sd68ad1s';
-    const urlHash = decodeURIComponent(req.query[pass]);
-    db.ref('products/' + req.params.id).remove().then(e => {
+router.delete('/admin/product',  (req, res) => {
+
+    const isValid = req.body.isValid;
+
+    if(!isValid) return res.redirect('/login');
+
+    const key = req.body.key;
+
+    db.ref('products/' + key).remove().then(e => {
         return res.json({status: 200});
     }).catch(err => {
         res.json({
