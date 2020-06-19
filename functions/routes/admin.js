@@ -21,38 +21,19 @@ router.get('/admin', verifyLog, (req, res) => {
 // Products section --------------------------------------
 
 // Render products page
-router.get('/admin/productos', verifyLog, async (req, res) => {
+router.get('/admin/productos', verifyLog, (req, res) => {
     const pass = 'sd68ad1s';
     const urlHash = decodeURIComponent(req.query[pass]);
 
-    const products = await getProducts;
-    res.render('productos', {products, pass, urlHash});
-})
-
-// Promise to get products
-const getProducts = new Promise((resolve, reject) => {
-        db.ref('products').once('value', (snapshot) => {
-            const data = snapshot.val();
-            resolve(data); 
-        });
-});
-  
-
-// Get products with fetch
-router.get('/admin/productos/fetch', async (req, res) => {
-
     db.ref('products').on('value', (snapshot) => {
         const products = snapshot.val();
-         res.send({
-             status: 200,
-             products
-         }); 
+        res.render('productos', {products, pass, urlHash}); 
          db.ref('products').off("value");
     });
-});
+    
+})
 
 // Render add product page
-
 router.get('/admin/products/add', verifyLog, (req, res) => {
     const pass = 'sd68ad1s';
     const urlHash = decodeURIComponent(req.query[pass]);
