@@ -61,7 +61,7 @@
                     Imagen del producto
                 </label>
                 {{#if data}}
-                    <img id="productImage" src={{data.imageUrl}} alt="{{data.title}}"  />
+                    <img id="productImage" src={{data.url400}} alt="{{data.title}}"  />
                 {{/if}}
                 <input class="product_image" id="image" type="file" name="image" value="Selecione una imagen"/>
             </div>
@@ -71,6 +71,7 @@
                 </label>
                 <input id="title" type="text" name="title" {{#if data }} value={{data.title}} {{/if}} />
             </div>
+
             <div class="form_group">
                 <label for="" class="form_group_label">
                     Precio del producto al detal
@@ -98,7 +99,9 @@
             </div>
         </form>
     </main>
-
+    {{#if data}}
+    <span id="smallImage">{{data.url200}}</span>
+    {{/if}}
     <script src="/scripts/adminMenu.js"></script>
     <script src="/scripts/addProduct.js"></script>
 </body>

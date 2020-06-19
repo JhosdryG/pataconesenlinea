@@ -102,31 +102,42 @@ const onLoadImage = async () => {
 }
 
 // Get input values and resize image download url
-const getProductData = () => new Promise((resolve, reject) => {
+const getProductData = () => new Promise(async (resolve, reject) => {
+    let url200;
+    let url400;
     if(file){
-        const resizeUrl = getResizeUrl(file);
-        const storageRef = firebase.storage().ref().child('products/' + resizeUrl);
-        keepTrying(10, storageRef).then((url) => {
-            const product = {
-                imageUrl : url,
-                title: getValue('title'),
-                detailPrice: getValue('detailPrice'),
-                bigPrice: getValue('bigPrice'),
-                desc: getValue('desc')
-            }
-            resolve(product);
-        });
+        console.log('Empizo');
+        url200 = await getResizeUrl('_200x200');
+        url400 = await getResizeUrl('_400x400');
+        console.log('termino');
     }else{
-        const product = {
-            imageUrl : document.getElementById("productImage").src,
-            title: getValue('title'),
-            detailPrice: getValue('detailPrice'),
-            bigPrice: getValue('bigPrice'),
-            desc: getValue('desc')
-        }
-        resolve(product);
+        url200 = document.getElementById("smallImage").innerText;
+        url400 = document.getElementById("productImage").src;
     }
+    const product = {
+        url200,
+        url400,
+        title: getValue('title'),
+        detailPrice: getValue('detailPrice'),
+        bigPrice: getValue('bigPrice'),
+        desc: getValue('desc')
+    }
+    resolve(product);
 });
+
+// Get the resize donwload url of te specified size
+const getResizeUrl = size => new Promise( async (resolve, reject) => {
+    let resizeUrl = getResizeFilename(file, size);
+    let storageRef = firebase.storage().ref().child('products/' + resizeUrl);
+    resolve(await keepTrying(10, storageRef));
+});
+
+const getResizeFilename = (file, size) => {
+    const imageExt = '.' + file.name.split('.').pop();
+    return file.name.replace(imageExt, size + imageExt);
+};
+
+
 
 // Post product to firebase db
 const fetchData = product => {
@@ -157,9 +168,7 @@ const fetchData = product => {
                 allowOutsideClick: false,
                 preConfirm: () => {
                     if(key){
-                        console.log(product.imageUrl);
-                        console.log(document.getElementById("productImage"));
-                        document.getElementById("productImage").src = product.imageUrl;
+                        document.getElementById("productImage").src = product.url400;
                     }else{
                         clearField();
                     }
@@ -281,12 +290,6 @@ const clearField = () => {
 
 const getValue = id => document.getElementById(id).value;
 
-const getResizeUrl = file => {
-    const imageExt = '.' + file.name.split('.').pop();
-    return file.name.replace(imageExt, '_200x200' + imageExt);
-};
-
-
 // Functions to get the resize donwload url
 // it keeps trying until it's availlabel
 function delay(t, v) {
@@ -322,9 +325,6 @@ function keepTrying(triesRemaining, storageRef) {
         }
     });
 }
-
-
-
 
 
 // Allows only number on price inputs

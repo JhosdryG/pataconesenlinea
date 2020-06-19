@@ -28,7 +28,7 @@ router.get('/admin/productos', verifyLog, (req, res) => {
     db.ref('products').on('value', (snapshot) => {
         const products = snapshot.val();
         res.render('productos', {products, pass, urlHash}); 
-         db.ref('products').off("value");
+        db.ref('products').off("value");
     });
     
 })
@@ -63,29 +63,29 @@ router.post('/admin/product', (req, res) => {
 // get product
 router.get('/admin/product/:id', verifyLog,  (req, res) => {
 
-
     const pass = 'sd68ad1s';
     const urlHash = decodeURIComponent(req.query[pass]);
-
     const key = req.params.id;
 
-    db.ref('products/' + key).once('value', (snapshot) => {
+    db.ref('products/' + key).on('value', (snapshot) => {
         const data = snapshot.val();
         if(data){
+
             res.render('addProduct', {data, urlHash, pass, key} );
+            
+
         }else{
+
             res.redirect(url.format({
                 pathname:"/admin/productos",
                 query:{
                   [pass]: encodeURIComponent(urlHash)
                 },
               }));
-        }
-    }).catch(err => {
-        console.log(err);
-        res.redirect('/login');
-    });
 
+        }
+        db.ref('products/' + key).off('value');
+    });
 });
 
 // Edit product
@@ -96,7 +96,10 @@ router.put('/admin/product', (req, res) => {
     if(!isValid) return res.redirect('/login');
      
     const product = req.body.product;
-    db.ref('products/' + product.key).set(product).then(e => {
+    const key = product.key;
+    delete product.key;
+
+    db.ref('products/' + key).set(product).then(e => {
         return res.json({
             status: 200
        });
