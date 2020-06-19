@@ -1,7 +1,6 @@
 const db = require('./firebase');
 const { Router } = require('express');
 const {verifyLog} = require('./middlewares');
-const bcrypt = require('bcrypt');
 const url = require('url'); 
 
 const router = Router();
