@@ -16,6 +16,7 @@ app.use(helmet());
 // Routes
 app.use(require('./routes/login'));
 app.use(require('./routes/admin'));
+app.use(require('./routes/web'));
 
 
 // Static files

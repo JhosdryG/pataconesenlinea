@@ -5,6 +5,7 @@ const url = require('url');
 
 const router = Router();
 
+
 router.get('/admin/cert', (req,res) => {
     db.ref('cert').once('value', (snapshot) => {
         const data = snapshot.val();
@@ -70,10 +71,7 @@ router.get('/admin/product/:id', verifyLog,  (req, res) => {
     db.ref('products/' + key).on('value', (snapshot) => {
         const data = snapshot.val();
         if(data){
-
-            res.render('addProduct', {data, urlHash, pass, key} );
-            
-
+            res.render('addProduct', {data, urlHash, pass, key} );     
         }else{
 
             res.redirect(url.format({

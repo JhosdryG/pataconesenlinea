@@ -44,18 +44,21 @@ h2 {
     font-size: 3.5rem;
     color: #39D31E;
     text-align: center;
-    margin: 0 0 40px 0;
+    margin:  0 0 40px 0;
     position: relative;
+    padding-top: 120px;
 }
 
 h2::after {
     content: '';
     position: absolute;
-    background-image: url(img/h2-line.png);
+    background: #39D31E;
     width: 100px;
     height: 3px;
     bottom: -10px;
-    left: 650px;
+    /* left: 650px */
+    left: 50%;
+    transform: translateX(-50%);
 }
 
 h3 {
@@ -127,7 +130,7 @@ nav ul li a {
 }
 
 .hero {
-    background-image: url(img/hero.jpg);
+    background-image: url(/img/hero.jpg);
     height: 695px;
     background-size: cover;
     background-position: center center;
