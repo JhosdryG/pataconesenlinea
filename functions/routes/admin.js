@@ -36,6 +36,20 @@ const getProducts = new Promise((resolve, reject) => {
             resolve(data); 
         });
 });
+  
+
+// Get products with fetch
+router.get('/admin/productos/fetch', async (req, res) => {
+
+    db.ref('products').on('value', (snapshot) => {
+        const products = snapshot.val();
+         res.send({
+             status: 200,
+             products
+         }); 
+         db.ref('products').off("value");
+    });
+});
 
 // Render add product page
 

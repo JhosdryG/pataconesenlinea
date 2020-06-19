@@ -46,14 +46,14 @@
     <header class="header">
         <div class="container">
             <h2>Productos</h2>
-            <button>Reload</button>
+            <button onclick="reload('{{pass}}', '{{urlHash}}')">Reload</button>
             <a id="addProduct" href="/admin/products/add?{{{pass}}}={{{urlHash}}}"><i class="fas fa-plus"></i> Agregar producto</a>
         </div>
     </header>
 
-    <main class="main">
+    <main class="main" id="products_list">
         {{#if products}}
-        <ul class="products_list">
+        <ul class="products_list" >
             {{#each products}}
                 <li class="product" onclick="location.href='/admin/product/{{@key}}?{{{../pass}}}={{{../urlHash}}}'">
                     <div class="product_imgbox">
@@ -67,10 +67,10 @@
                                 {{title}}
                             </h3>
                             <span class="product_info_titlebox_price">
-                                {{detailPrice}}$
+                                Precio al detal: {{detailPrice}} CLP
                             </span>
                             <span class="product_info_titlebox_price">
-                                {{bigPrice}}$
+                                Precio al mayor: {{bigPrice}} CLP
                             </span>
                         </div>
                         <div class="product_info_desc">
@@ -90,6 +90,7 @@
     </main>
 
     <script src="/scripts/adminMenu.js"></script>
+    <script src="/scripts/renderProducts.js"></script>
 </body>
 
 </html>
