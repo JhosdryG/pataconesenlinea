@@ -15,7 +15,8 @@
 <body>
 
     <header>
-            <nav>
+        <div class="barra">
+            <nav class="container">
                 <a href="/index"><img src="/img/Logo.png" alt="Logotipo Pataconesonline.cl" class="logo"></a>
                 <ul>
                     <li><a href="/index.html">Inicio</a></li>
@@ -27,6 +28,7 @@
                 </ul>
                 <img src="/img/Cart.svg" alt="Carrito" class="cart">
             </nav>
+        </div>
 
         <div class="hero" id="hero">
             <div class="hero-content contenedor">
@@ -123,6 +125,7 @@
 
     <section id="testimonials" class="container section">
         <h2>Nuestros Clientes Satisfechos</h2>
+
         <div class="quote">
             <div class="quote-text-l">
                 <blockquote class="blockquote-l">"Muy buenos los patacones, súper fácil de despegar no tuvimos ningún
@@ -164,20 +167,31 @@
         <h2>Contáctanos</h2>
 
         <form action="" class="form-contact">
-            <label for="name">Nombre:</label>
-            <input type="text" id="name" placeholder="Inserta tu nombre" required>
 
-            <label for="email">Email:</label>
-            <input type="email" id="email" placeholder="Inserta tu email" required>
+            <div class="form-group">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" placeholder="Inserta tu nombre" required>
+            </div>
 
-            <label for="telefono">Teléfono:</label>
-            <input type="tel" id="telefono" placeholder="Inserta tu teléfono" required>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Inserta tu email" required>
+            </div>
 
-            <label for="mensaje">Mensaje:</label>
-            <textarea name="" id="mensaje" cols="30" rows="10"></textarea>
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="tel" id="telefono" placeholder="Inserta tu teléfono" required>
+            </div>
 
-            <input type="submit">
+            <div class="form-group">
+                <label for="mensaje">Mensaje:</label>
+                <textarea name="" id="mensaje" cols="30" rows="10"></textarea>
+            </div>
+
+            <input type="submit" class="button">
         </form>
+
+        <img src="/img/Platanotlf.png" alt="">
     </section>
 
     <footer>
