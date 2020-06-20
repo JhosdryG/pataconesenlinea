@@ -51,41 +51,44 @@
     </header>
 
     <main class="main" id="products_list">
-        {{#if products}}
-        <ul class="products_list" >
-            {{#each products}}
-                <li class="product" onclick="location.href='/admin/product/{{@key}}?{{{../pass}}}={{{../urlHash}}}'">
-                    <div class="product_imgbox">
+        <div class="container">
+
+            {{#if products}}
+            <ul class="products_list" >
+                {{#each products}}
+                    <li class="product" onclick="location.href='/admin/product/{{@key}}?{{{../pass}}}={{{../urlHash}}}'">
+                        <div class="product_imgbox">
+                            
+                            <img src={{{url200}}} alt="{{title}}" class="product_imgbox_img" />
                         
-                        <img src={{{url200}}} alt="{{title}}" class="product_imgbox_img" />
-                      
-                    </div>
-                    <div class="product_info">
-                        <div class="product_info_titlebox">
-                            <h3 class="product_info_titlebox_title">
-                                {{title}}
-                            </h3>
-                            <span class="product_info_titlebox_price">
-                                Precio al detal: {{detailPrice}} CLP
-                            </span>
-                            <span class="product_info_titlebox_price">
-                                Precio al mayor: {{bigPrice}} CLP
-                            </span>
                         </div>
-                        <div class="product_info_desc">
-                            <p>
-                                {{desc}}
-                            </p>
+                        <div class="product_info">
+                            <div class="product_info_titlebox">
+                                <h3 class="product_info_titlebox_title">
+                                    {{title}}
+                                </h3>
+                                <div class="product_info_titlebox_price">
+                                    Precio al detal: {{detailPrice}} CLP
+                                </div>
+                                <div class="product_info_titlebox_price">
+                                    Precio al mayor: {{bigPrice}} CLP
+                                </div>
+                            </div>
+                            <div class="product_info_desc">
+                                <p>
+                                    {{desc}}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                </li>
-            {{/each}}
-        </ul>
-        {{else}}
-            <p class="products_alert">
-                No se han registrado productos
-            </p>
-        {{/if}}
+                    </li>
+                {{/each}}
+            </ul>
+            {{else}}
+                <p class="products_alert">
+                    No se han registrado productos
+                </p>
+            {{/if}}
+        </div>
     </main>
 
     <script src="/scripts/adminMenu.js"></script>

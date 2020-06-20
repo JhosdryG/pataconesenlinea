@@ -11,7 +11,6 @@ const admin = require('firebase-admin');
 
 // Production Credentials
 //admin.initializeApp(functions.config().firebase);
-
 // Router and db Instances
 const db = admin.database();
 

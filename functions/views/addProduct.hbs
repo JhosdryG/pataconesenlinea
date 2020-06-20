@@ -56,45 +56,51 @@
 
     <main class="main">
         <form class="form">
-            <div class="form_group">
-                <label for="" class="form_group_label">
-                    Imagen del producto
-                </label>
-                {{#if data}}
-                    <img id="productImage" src={{data.url400}} alt="{{data.title}}"  />
-                {{/if}}
-                <input class="product_image" id="image" type="file" name="image" value="Selecione una imagen"/>
-            </div>
-            <div class="form_group">
-                <label for="" class="form_group_label">
-                    Nombre del producto
-                </label>
-                <input id="title" type="text" name="title" {{#if data }} value={{data.title}} {{/if}} />
+            <div class="form_section section_image">
+                <div class="form_group">
+                    <label for="" class="form_group_label">
+                        Imagen del producto
+                    </label>
+                    {{#if data}}
+                        <img id="productImage" src={{data.url400}} alt="{{data.title}}"  />
+                    {{/if}}
+                    <input class="product_image" id="image" type="file" name="image" value="Selecione una imagen"/>
+                </div>
             </div>
 
-            <div class="form_group">
-                <label for="" class="form_group_label">
-                    Precio del producto al detal
-                </label>
-                <input id="detailPrice" type="text" name="detailPrice" {{#if data }} value={{data.detailPrice}} {{/if}} />
+            <div class="form_section section_form">
+                <div class="form_group">
+                    <label for="" class="form_group_label">
+                        Nombre del producto
+                    </label>
+                    <input id="title" type="text" name="title" {{#if data }} value={{data.title}} {{/if}} />
+                </div>
+
+                <div class="form_group section_form">
+                    <label for="" class="form_group_label">
+                        Precio del producto al detal
+                    </label>
+                    <input id="detailPrice" type="text" name="detailPrice" {{#if data }} value={{data.detailPrice}} {{/if}} />
+                </div>
+                <div class="form_group">
+                    <label for="" class="form_group_label">
+                        Precio del producto al mayor
+                    </label>
+                    <input id="bigPrice" type="text" name="bigPrice" {{#if data }} value={{data.bigPrice}} {{/if}} />
+                </div>
+                <div class="form_group">
+                    <label for="" class="form_group_label">
+                        Agregue la descripción del producto
+                    </label>
+                    <textarea id="desc" name="desc" id="desc">{{#if data }}{{data.desc}}{{/if}}</textarea>
+                </div>
             </div>
-            <div class="form_group">
-                <label for="" class="form_group_label">
-                    Precio del producto al mayor
-                </label>
-                <input id="bigPrice" type="text" name="bigPrice" {{#if data }} value={{data.bigPrice}} {{/if}} />
-            </div>
-            <div class="form_group">
-                <label for="" class="form_group_label">
-                    Agregue la descripción del producto
-                </label>
-                <textarea id="desc" name="desc" id="desc">{{#if data }}{{data.desc}}{{/if}}</textarea>
-            </div>
-            <div class="button_group">
+            
+            <div class="button_group form_section">
                 <input type="button" onclick="onSubmit({{#if key}}'{{key}}'{{/if}})" value="Agregar" class="button button_add"/>
                 <a href="/admin/productos/?{{{pass}}}={{{urlHash}}}" class="button button_back">Volver</a>
                 {{#if key}}
-                <input type="button" value="Eliminar" onclick="deleteProduct('{{key}}','{{pass}}','{{urlHash}}')" />
+                <input type="button" value="Eliminar" onclick="deleteProduct('{{key}}','{{pass}}','{{urlHash}}')" class="button button_delete" />
                 {{/if}}
             </div>
         </form>
