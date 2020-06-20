@@ -2,6 +2,9 @@
 @import ../global
 @import ../mixins
 
+main,body
+    background-color: $primary-light!important
+
 .form
     padding: 20px
     background: $primary
@@ -25,12 +28,12 @@
             &.section_image
                 padding: 20px
                 border-radius: 10px
-                background-color: $primary-dark
+                background-color: $primary-light
                 grid-area: image
             &.section_form
                 padding: 20px
                 border-radius: 10px
-                background-color: $primary-dark
+                background-color: $primary-light
                 grid-area: form
 
 
@@ -50,7 +53,7 @@
 
         &_label
             margin: 25px 0 10px 0
-            color: #ffffff
+            color: $secondary
             font-size: 1rem
             @include tablet()
                 margin: 0
@@ -60,9 +63,10 @@
             padding: 6px
             font-size: 1rem
             color: $dark
-            border: none
+            border: 2px solid $secondary
             border-radius: 6px
-            background-color: #e9e9e9
+            background-color: #fff
+            outline: none
             @include tablet()
                 margin-bottom: 15px
 
@@ -72,10 +76,12 @@
             color: $dark
             border: none
             border-radius: 6px
+            outline: none
             resize: none
             width: 100%
+            border: 2px solid $secondary
             height: 100px
-            background-color: #e9e9e9
+            background-color: #fff
 
         & [type="file"]
             display: inline-block
@@ -83,7 +89,7 @@
             border: none
             border-radius: 6px
             background-color: $primary
-            color: #ffffff
+            color: $dark
 
     .button_group
         display: grid
@@ -91,9 +97,13 @@
         padding: 20px 100px
         @include tablet()
             grid-area: buttons
-            grid-template-columns: repeat(3, 1fr)
+            grid-template-columns: repeat(2, 1fr)
+            justify-content: center
             grid-gap: 20px
 
+            &.update
+                grid-template-columns: repeat(3, 1fr)
+                justify-content: center
 
         .button
             display: inline-block
@@ -102,19 +112,19 @@
             width: 100%
             font-size: 1.1rem
             text-align: center
-            color: #ffffff
-            border: none
+            color: $dark
+            border: 2px solid $secondary
             border-radius: 6px
             cursor: pointer
 
             &_add
-                background-color: #3068bb
+                background-color: $primary-light
 
             &_delete
                 background-color: #e93731
 
             &_back
-                background-color: $primary-dark
+                background-color: $primary-light
 
 #smallImage
     display: none

@@ -11,16 +11,22 @@
         display: flex
         flex-direction: column
         align-items: center
-        background: rgb(2,107,217)
-        background: linear-gradient(0deg, rgba(2,107,217,1) 3%, rgba(136,215,255,1) 100%)
+        background: rgb(66,159,18)
+        background: -moz-linear-gradient(0deg, rgba(66,159,18,1) 10%, rgba(245,240,113,1) 98%)
+        background: -webkit-linear-gradient(0deg, rgba(66,159,18,1) 10%, rgba(245,240,113,1) 98%)
+        background: linear-gradient(0deg, rgba(66,159,18,1) 10%, rgba(245,240,113,1) 98%)
+        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#429f12",endColorstr="#f5f071",GradientType=1)
         border: none
         border-radius: 10px
         cursor: pointer
         transition: all .4s ease-out
         &:hover
-            transform: scale(1.05)
-            background: rgb(0,68,140)
-            background: linear-gradient(0deg, rgba(0,68,140,1) 3%, rgba(26,141,199,1) 100%)
+            transform: scale(1.01)
+            background: rgb(61,150,14);
+            background: -moz-linear-gradient(0deg, rgba(61,150,14,1) 17%, rgba(245,240,113,1) 99%);
+            background: -webkit-linear-gradient(0deg, rgba(61,150,14,1) 17%, rgba(245,240,113,1) 99%);
+            background: linear-gradient(0deg, rgba(61,150,14,1) 17%, rgba(245,240,113,1) 99%);
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3d960e",endColorstr="#f5f071",GradientType=1);
 
         &_imgbox_img
 
@@ -64,14 +70,14 @@
     #addProduct
         display: block
         padding: 15px 25px
-        color: #ffffff
+        color: $secondary
         background-color: $primary
         border: none
         border-radius: 10px
         font-size: 1.2rem
         cursor: pointer
         &:hover
-            background-color: $primary-dark
+            background-color: $primary-light
 
 .products_alert
     color: $primary-light
