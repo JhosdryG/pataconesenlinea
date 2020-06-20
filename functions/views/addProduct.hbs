@@ -96,7 +96,8 @@
                 </div>
             </div>
             
-            <div class="button_group form_section">
+            <div class="button_group form_section {{#if data}}update{{/if}}">
+
                 <input type="button" onclick="onSubmit({{#if key}}'{{key}}'{{/if}})" value="Agregar" class="button button_add"/>
                 <a href="/admin/productos/?{{{pass}}}={{{urlHash}}}" class="button button_back">Volver</a>
                 {{#if key}}
