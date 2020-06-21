@@ -72,14 +72,13 @@ h3 {
 h4 {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
-    font-size: 3rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.2rem;
+    margin-bottom: 2rem;
 }
 
 p {
     font-weight: 400;
     font-size: 2rem;
-    margin: 0 0 1.5rem 0;
 }
 
 .button {
@@ -124,9 +123,13 @@ nav ul li a {
     color: black;
 }
 
-.cart {
+.back {
+    margin-right: 10rem;
+}
+
+.cart-i {
     width: 3.5rem;
-    margin-left: 20rem;
+    margin-left: 15rem;
 }
 
 .hero {
@@ -144,6 +147,10 @@ nav ul li a {
     border-radius: 4rem 0 4rem 0;
     width: 76.5rem;
     margin-left: 18rem;
+}
+
+.hero-content p {
+    margin-bottom: 1.5rem;
 }
 
 /* Services */
@@ -312,7 +319,6 @@ blockquote {
 #contact{
     display: flex;
     flex-wrap: wrap;
-    padding: 150px;
 }
 
 #contact h2{
@@ -323,21 +329,21 @@ blockquote {
     width: 15%;
     height: auto;
     align-self: center;
-    margin-left: 30px;
+    margin-left: 60px;
 }
 
 @media (max-width: 480px){
     #contact img{
         display: none;
     }
-}
+}   
 
 .form-contact {
     display: flex;
     flex-direction: column;
     width: 80%;
     padding: 6rem;
-    background-color: #FFFB72;
+    background-color: var(--lightYello);
     text-align: center;
     border-radius: 4rem 0 4rem 0;
 }
@@ -352,7 +358,7 @@ blockquote {
     font-family: 'Roboto', sans-serif;
     font-weight: 700;
     text-align: left;
-    margin-bottom: 20px;
+    margin-bottom: 2rem;
     width: 15%;
 }
 
@@ -367,11 +373,11 @@ blockquote {
 
 .form-contact textarea{
     width: 85%;
-    height: 150px;
+    height: 15rem;
 }
 
 .form-contact .button{
-    margin-top: 20px;
+    margin-top: 2rem;
     border: none;
     align-self: center;
 }
@@ -381,7 +387,7 @@ blockquote {
 footer {
     background-color: var(--lightGreen);
     text-align: center;
-    padding: 1.5rem;
+    padding: 1rem;
     margin-top: 8rem;
 }
 
@@ -389,45 +395,41 @@ footer {
     width: 30rem;
 }
 
-.social-media img {
-    margin-top: 1rem;
-    width: 3rem;
+.social-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1rem 0
 }
 
-footer p {
+.social-media img {
+    width: 3rem;
+    margin: 0 1rem 0 2rem
+}
+
+.social-media p {
+    font-weight: bold;
     font-size: 1.8rem;
 }
 
-footer p span {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
-    font-weight: bold;
-    margin: 1rem 0;
+.copy {
+    font-size: 1.4rem;
+    font-weight: 300;
 }
 
 /* Products */
 
 .products-p {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2.2rem;
+    font-size: 2rem;
     font-style: italic;
-    text-align: center;
-}
-
-.m-d {
-    font-family: 'Roboto', sans-serif;
-    font-size: 2.2rem;
-    font-weight: bold;
-    color: #39D31E;
     text-align: center;
     margin-bottom: 4rem;
 }
 
 .catalog {
-    text-align: center;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    grid-gap: 8rem;
+    grid-gap: 6rem;
 }
 
 .product {
@@ -435,31 +437,31 @@ footer p span {
     align-items: center;
 }
 
+.product-img img {
+    height: 22rem;
+    width: 23rem;
+}
+
 .product-info {
-    margin-left: 3rem;
+    margin-left: 2rem;
     text-align: left;
 }
 
-.desc {
+.product-info p {
     font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
-    font-weight: 300;
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
 }
 
 .price {
     color: #39D31E;
-    font-family: 'Roboto', sans-serif;
     font-weight: bold;
 }
 
 .product-info a {
     background-color: #EEE712;
-    width: 18.5rem;
-    height: 4rem;
     color: black;
-    font-family: 'Roboto', sans-serif;
     font-size: 1.4rem;
-    font-weight: bold;
 }
 
 /* Cart */
@@ -476,8 +478,8 @@ footer p span {
 
 .cart-product {
     display: flex;
-    padding: 5rem;
     border-bottom: 0.05rem solid #7E7777;
+    padding: 5rem;
 }
 
 .cart-product:last-of-type {
@@ -485,10 +487,9 @@ footer p span {
 }
 
 .cart-product-img {
-    width: 19.1rem;
-    height: 24.1rem;
-    margin-right: 2.5rem;
-    margin-top: 1.5rem;
+    margin-right: 2rem;
+    height: 20rem;
+    width: 21rem;
 }
 
 .cart-product-info p {
@@ -496,24 +497,14 @@ footer p span {
     font-size: 1.8rem;
 }
 
-.pack {
+.info-product {
     display: flex;
-    margin: 2.5rem 0;
-}
-
-.qt {
-    display: flex;
-    margin-bottom: 2.5rem;
-}
-
-.price-cart {
-    display: flex;
-    margin-bottom: 2.5rem;
+    justify-content: space-between;
+    margin: 2rem 0;
 }
 
 .cart-info-r {
-    margin-left: 30rem;
-    text-align: right;
+    margin-left: 10rem;
 }
 
 .cart-product-info a {
@@ -537,7 +528,7 @@ footer p span {
 
 .order-summary p {
     font-family: 'Roboto', sans-serif;
-    font-size: 3.5rem;
+    font-size: 3rem;
     font-weight: 700;
     margin: 0;
 }
@@ -549,12 +540,12 @@ footer p span {
 
 .total p {
     font-family: 'Roboto', sans-serif;
-    font-size: 3rem;
+    font-size: 2.5rem;
     font-weight: bold;
 }
 
 .total-r {
-    margin-left: 35rem;
+    margin-left: 30rem;
 }
 
 .order-data {
@@ -566,7 +557,7 @@ footer p span {
 
 .order-qt {
     font-family: 'Roboto', sans-serif;
-    font-size: 2.5rem;
+    font-size: 2rem;
     margin-bottom: 0;
 }
 
@@ -580,6 +571,19 @@ footer p span {
 }
 
 /* Sale */
+
+#sale h3 {
+    font-size: 3.5rem;
+    text-transform: initial;
+    margin-bottom: 1rem;
+}
+
+.text-sale {
+    font-family: 'Roboto', sans-serif;
+    padding-bottom: 2rem;
+    border-bottom: 0.05rem solid #7E7777;
+    margin-bottom: 4rem;
+}
 
 .sale {
     display: flex;
@@ -613,12 +617,18 @@ footer p span {
 
 .form-sale textarea {
     height: 8rem;
-    margin-bottom: 10rem;
+    margin-bottom: 4rem;
+}
+
+.sale-total {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 5rem;
 }
 
 .sale-bt {
-    width: 54rem;
     border: none;
+    width: 100%;
 }
 
 .sale-info {
