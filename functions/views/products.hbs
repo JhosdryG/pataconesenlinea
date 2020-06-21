@@ -17,16 +17,11 @@
     <header>
         <div class="barra">
             <nav class="container">
-                <a href="/index"><img src="/img/Logo.png" alt="Logotipo Pataconesonline.cl" class="logo"></a>
+                <a href="/"><img src="/img/Logo.png" alt="Logotipo Pataconesonline.cl" class="logo"></a>
                 <ul>
                     <li><a href="/" class="back">Volver</a></li>
                 </ul>
-                <span class="cart_icon">
-                    <img src="/img/Cart.svg" alt="Carrito" class="cart-i" />
-                    <span id="cart_counter">
-                        0
-                    </span>
-                </span>
+                <a href="/cart"><img src="/img/Cart.svg" alt="Carrito" class="cart-i"></a>
             </nav>
         </div>
     </header>
@@ -34,7 +29,7 @@
     <main class="container section">
 
         <h2>Productos</h2>
-        <p class="products-p">Por la compra mayor a 6 productos se aplica precio al mayor</p>
+        <p class="products-p">Precio al mayor aplica desde la cantidad de 6 productos</p>
 
         {{#if products}}
         <div class="catalog">
@@ -47,11 +42,11 @@
                     <h4>{{title}}</h4>
                     <p class="desc">{{desc}}</p>
                     <p class="price">
-                        Precio al detal:
+                        Detal:
                         <span id="{{@key}}-detail" data-value="{{detailPrice}}">{{detailPrice}}</span> CLP  
                     </p>
                     <p class="price">
-                        Precio al mayor:
+                        Mayor:
                          <span id="{{@key}}-big" data-value="{{bigPrice}}">{{bigPrice}}</span> CLP
                     </p>
                     <button class="button" data-id="{{@key}}">Añadir al carrito</button>
