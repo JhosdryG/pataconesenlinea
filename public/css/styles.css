@@ -24,7 +24,7 @@ body {
 
 .container {
     width: 100%;
-    max-width: 150rem;
+    max-width: 130rem;
     margin: 0 auto;
 }
 
@@ -386,23 +386,23 @@ footer {
 }
 
 .logo-footer img {
-    width: 40rem;
+    width: 30rem;
 }
 
-.social-media img{
-    margin: 1.5rem 1.5rem;
+.social-media img {
+    margin-top: 1rem;
+    width: 3rem;
 }
 
 footer p {
-    font-size: 2.5rem;
-    margin: 1.5rem 0;
+    font-size: 1.8rem;
 }
 
 footer p span {
     font-family: 'Roboto', sans-serif;
-    font-size: 3rem;
+    font-size: 2rem;
     font-weight: bold;
-    margin: 1.5rem 0;
+    margin: 1rem 0;
 }
 
 /* Products */
