@@ -1,0 +1,9 @@
+{
+    "version": 3,
+    "mappings": "",
+    "sources": [
+        "../../sass/productsPortal.sass"
+    ],
+    "names": [],
+    "file": "productsPortal.css"
+}
