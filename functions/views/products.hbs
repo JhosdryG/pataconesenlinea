@@ -42,11 +42,12 @@
                     <h4>{{title}}</h4>
                     <p class="desc">{{desc}}</p>
                     <p class="price">
-                        <span id="{{@key}}-big" data-value="{{bigPrice}}" >{{bigPrice}}</span> CLP
-                         - 
-                        <span id="{{@key}}-detail" data-value="{{detailPrice}}" >{{detailPrice}}</span> CLP
+                        <span id="{{@key}}-detail" data-value="{{detailPrice}}">{{detailPrice}}</span> CLP  
                     </p>
-                    <button  class="button" data-id="{{@key}}" >Añadir al carrito</button>
+                    <p class="price">
+                         <span id="{{@key}}-big" data-value="{{bigPrice}}">{{bigPrice}}</span> CLP
+                    </p>
+                    <button class="button" data-id="{{@key}}">Añadir al carrito</button>
                 </div>
             </div>
             {{/each}}
@@ -71,26 +72,27 @@
     {{!-- Portal --}}
     <div class="portal" id="portal">
         <div class="portal_box">
-                <div class="portal_product" id="{{@key}}">
-                    <div class="portal_product_info">
-                        <div class="product_img">
-                            <img src="https://firebasestorage.googleapis.com/v0/b/jgp-admin.appspot.com/o/products%2F20200525_230640_200x200.jpg?alt=media&token=acecedd0-a7c6-4a3b-bbb0-3fff93f9c3a3" alt="" id="portalImage">
-                        </div>
-
-                        <div class="portal_desc">
-                            <h4 id="portalTitle">Patacon crudo</h4>
-                            <p class="desc" id="portalDesc">
-                                10 tapas de patacón verder 16cm aprox
-                            </p>
-                            <input type="text" id="productCant" value="1" placeholder="Ingrese cantidad..."/>
-                            <span class="total" id="portalTotal">0 CLP</span>
-                        </div>
+            <div class="portal_product" id="{{@key}}">
+                <div class="portal_product_info">
+                    <div class="product_img">
+                        <img src="https://firebasestorage.googleapis.com/v0/b/jgp-admin.appspot.com/o/products%2F20200525_230640_200x200.jpg?alt=media&token=acecedd0-a7c6-4a3b-bbb0-3fff93f9c3a3"
+                            alt="" id="portalImage">
                     </div>
-                    <div class="portal_buttons">
-                        <button  class="button" id="portalAccept">Añadir</button>
-                        <button  class="button" id="portalClose">Cancelar</button>
+
+                    <div class="portal_desc">
+                        <h4 id="portalTitle">Patacon crudo</h4>
+                        <p class="desc" id="portalDesc">
+                            10 tapas de patacón verder 16cm aprox
+                        </p>
+                        <input type="text" id="productCant" value="1" placeholder="Ingrese cantidad..." />
+                        <span class="total" id="portalTotal">0 CLP</span>
                     </div>
                 </div>
+                <div class="portal_buttons">
+                    <button class="button" id="portalAccept">Añadir</button>
+                    <button class="button" id="portalClose">Cancelar</button>
+                </div>
+            </div>
         </div>
     </div>
     {{!-- Portal --}}
