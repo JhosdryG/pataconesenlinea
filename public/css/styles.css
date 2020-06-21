@@ -23,8 +23,8 @@ body {
 /* Globales */
 
 .container {
-    width: 100%;
-    max-width: 130rem;
+    width: 95%;
+    max-width: 120rem;
     margin: 0 auto;
 }
 

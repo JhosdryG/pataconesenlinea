@@ -1,3 +1,12 @@
+const currentCart = JSON.parse(localStorage.getItem('cart'));
+
+if(currentCart){
+    Object.keys(currentCart).forEach( key => {
+        $(key).classList.add('incar');
+        $q(`#${key} button`).disabled = true;
+    });
+}
+
 const cantInput = document.getElementById('productCant');
 const portalTotal = document.getElementById('portalTotal');
 const portalAccept = document.getElementById('portalAccept');
@@ -33,7 +42,34 @@ portalClose.addEventListener('click', () => {
 
 portalAccept.addEventListener('click', () => {
 
-    if(cantInput.value.trim().length > 0 && parseInt(cantInput.value,10) > 0){
-        console.log('Hola bebe');
+    if(cantInput.value.trim().length > 0 && parseInt(cantInput.value,10) > 0){    
+        addToCart();
+        updateCartCount();
+        updateInterface();
     }
-})
+});
+
+function addToCart(){
+    const productAmount = { [currentProduct] : cantInput.value };
+    const inCart = JSON.parse(localStorage.getItem('cart'));
+    const toCart = {...inCart, ...productAmount};
+    localStorage.setItem('cart', JSON.stringify(toCart));
+}
+
+function updateInterface(){
+    portal.classList.toggle('active');
+    $q(`#${currentProduct} button`).disabled = true;
+    $(currentProduct).classList.toggle('incar');
+}
+
+function updateCartCount(){
+    const cartNumber = JSON.parse(localStorage.getItem('cartCount'));
+    if(!cartNumber){
+        localStorage.setItem('cartCount',"1");
+        $('cart_counter').innerText = "1";
+    }else{
+        const number = parseInt(cartNumber,10) + 1;
+        localStorage.setItem('cartCount', JSON.stringify(number));
+        $('cart_counter').innerText = number;
+    }
+}

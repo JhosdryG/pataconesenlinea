@@ -34,6 +34,10 @@ addTocartButtons.forEach(button => {
     });
 });
 
+// Set cart counter
+const cartNumber = JSON.parse(localStorage.getItem('cartCount'));
+$('cart_counter').innerText = cartNumber;
+
 function setPortal(product){
     $('portalImage').src = $q(`#${product} img`).src;
     $('portalTitle').innerText = $q(`#${product} h4`).innerText;
