@@ -1,6 +1,6 @@
 const getProductPrice = id => {
-    const detail = document.getElementById(`${id}-detail`).getAttribute("data-value");
-    const big = document.getElementById(`${id}-big`).getAttribute("data-value");
+    const detail = $(`${id}-detail`).getAttribute("data-value");
+    const big = $(`${id}-big`).getAttribute("data-value");
     return {detail,big};
 }
 
@@ -29,6 +29,25 @@ const addTocartButtons = [...document.querySelectorAll('.product .button')];
 addTocartButtons.forEach(button => {
     button.addEventListener('click', (e) => {
         currentProduct = e.target.getAttribute("data-id");
-        document.getElementById('portal').classList.toggle('active');
+        setPortal(currentProduct);
+        $('portal').classList.toggle('active');
     });
-})
+});
+
+function setPortal(product){
+    $('portalImage').src = $q(`#${product} img`).src;
+    $('portalTitle').innerText = $q(`#${product} h4`).innerText;
+    $('portalDesc').innerText = $q(`#${product} .desc`).innerText;
+    $('portalTotal').innerText = "Total: " + $(`${product}-detail`).getAttribute('data-value') + " CLP";
+    $('productCant').value = 1;
+    $('portalAccept').disabled = false;
+}
+
+function $(id) {
+    return document.getElementById(id);
+}
+
+
+function $q(selector) {
+    return document.querySelector(selector);
+}

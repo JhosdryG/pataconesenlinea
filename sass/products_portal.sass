@@ -54,6 +54,9 @@
                     border: 2px solid $secondary
                     outline: none
 
+                .desc
+                    margin-bottom: 15px
+
                 .total
                     font-weight: bold
 
@@ -61,7 +64,11 @@
             .button
                 border: none
                 cursor: pointer
+                outline: none
                 &:hover
                     background-color: darken(#23940f, 6 )
-            
+                &:disabled
+                    background-color: #c0c0c0
+                    color: #fff
+                    cursor: auto
 

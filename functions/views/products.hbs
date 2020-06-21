@@ -42,9 +42,11 @@
                     <h4>{{title}}</h4>
                     <p class="desc">{{desc}}</p>
                     <p class="price">
+                        Precio al detal:
                         <span id="{{@key}}-detail" data-value="{{detailPrice}}">{{detailPrice}}</span> CLP  
                     </p>
                     <p class="price">
+                        Precio al mayor:
                          <span id="{{@key}}-big" data-value="{{bigPrice}}">{{bigPrice}}</span> CLP
                     </p>
                     <button class="button" data-id="{{@key}}">Añadir al carrito</button>
@@ -72,7 +74,7 @@
     {{!-- Portal --}}
     <div class="portal" id="portal">
         <div class="portal_box">
-            <div class="portal_product" id="{{@key}}">
+            <div class="portal_product">
                 <div class="portal_product_info">
                     <div class="product_img">
                         <img src="https://firebasestorage.googleapis.com/v0/b/jgp-admin.appspot.com/o/products%2F20200525_230640_200x200.jpg?alt=media&token=acecedd0-a7c6-4a3b-bbb0-3fff93f9c3a3"

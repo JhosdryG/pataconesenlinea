@@ -21,8 +21,10 @@ cantInput.addEventListener('keyup', (e) => {
     }else if(cant > 0 && cant > detailLimit){
         total = productsPrices[currentProduct].big * cant;
     }
-
-    portalTotal.innerText = `${total} CLP`; 
+    
+    portalTotal.innerText = `Total: ${total} CLP`; 
+    if(total < 1) portalAccept.disabled = true;
+    else portalAccept.disabled = false;
 });
 
 portalClose.addEventListener('click', () => {
@@ -30,7 +32,8 @@ portalClose.addEventListener('click', () => {
 });
 
 portalAccept.addEventListener('click', () => {
-    if(cantInput.value.trim().lenght > 0){
+
+    if(cantInput.value.trim().length > 0 && parseInt(cantInput.value,10) > 0){
         console.log('Hola bebe');
     }
 })
