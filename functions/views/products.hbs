@@ -9,6 +9,7 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,400&display=swap"
         rel="stylesheet">
+    <link rel="stylesheet" href="/css/products_portal.css">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 
@@ -35,141 +36,29 @@
         <p class="m-d">MAYOR DETAL</p>
 
 
+        {{#if products}}
         <div class="catalog">
-            <div class="product">
+            {{#each products}}
+            <div class="product" id="{{@key}}">
                 <div class="product-img">
-                    <img src="/img/Patacon.png" alt="Producto Patacon">
+                    <img src="{{url200}}" alt="{{title}}">
                 </div>
                 <div class="product-info">
-                    <h4>Patacon Verde</h4>
-                    <p class="desc">4 Tapas Grandes 16 cm</p>
-                    <p class="price">$1.600 - $2.000</p>
-                    <a href="#" class="button">Añadir al carrito</a>
+                    <h4>{{title}}</h4>
+                    <p class="desc">{{desc}}</p>
+                    <p class="price">
+                        <span id="{{@key}}-big" data-value="{{bigPrice}}" >{{bigPrice}}</span> CLP
+                         - 
+                        <span id="{{@key}}-detail" data-value="{{detailPrice}}" >{{detailPrice}}</span> CLP
+                    </p>
+                    <button  class="button" data-id="{{@key}}" >Añadir al carrito</button>
                 </div>
             </div>
-
-            <div class="product">
-                <div class="product-img">
-                    <img src="/img/Patacon.png" alt="Producto Patacon">
-                </div>
-                <div class="product-info">
-                    <h4>Patacon Verde</h4>
-                    <p class="desc">4 Tapas Grandes 16 cm</p>
-                    <p class="price">$1.600 - $2.000</p>
-                    <a href="#" class="button">Añadir al carrito</a>
-                </div>
-            </div>
-
-            <div class="product">
-                <div class="product-img">
-                    <img src="/img/Patacon.png" alt="Producto Patacon">
-                </div>
-                <div class="product-info">
-                    <h4>Patacon Verde</h4>
-                    <p class="desc">4 Tapas Grandes 16 cm</p>
-                    <p class="price">$1.600 - $2.000</p>
-                    <a href="#" class="button">Añadir al carrito</a>
-                </div>
-            </div>
-
-            <div class="product">
-                <div class="product-img">
-                    <img src="/img/Patacon.png" alt="Producto Patacon">
-                </div>
-                <div class="product-info">
-                    <h4>Patacon Verde</h4>
-                    <p class="desc">4 Tapas Grandes 16 cm</p>
-                    <p class="price">$1.600 - $2.000</p>
-                    <a href="#" class="button">Añadir al carrito</a>
-                </div>
-            </div>
-
-            <div class="product">
-                <div class="product-img">
-                    <img src="/img/Patacon.png" alt="Producto Patacon">
-                </div>
-                <div class="product-info">
-                    <h4>Patacon Verde</h4>
-                    <p class="desc">4 Tapas Grandes 16 cm</p>
-                    <p class="price">$1.600 - $2.000</p>
-                    <a href="#" class="button">Añadir al carrito</a>
-                </div>
-            </div>
-
-            <div class="product">
-                <div class="product-img">
-                    <img src="/img/Patacon.png" alt="Producto Patacon">
-                </div>
-                <div class="product-info">
-                    <h4>Patacon Verde</h4>
-                    <p class="desc">4 Tapas Grandes 16 cm</p>
-                    <p class="price">$1.600 - $2.000</p>
-                    <a href="#" class="button">Añadir al carrito</a>
-                </div>
-            </div>
-
-            <div class="product">
-                <div class="product-img">
-                    <img src="/img/Patacon.png" alt="Producto Patacon">
-                </div>
-                <div class="product-info">
-                    <h4>Patacon Verde</h4>
-                    <p class="desc">4 Tapas Grandes 16 cm</p>
-                    <p class="price">$1.600 - $2.000</p>
-                    <a href="#" class="button">Añadir al carrito</a>
-                </div>
-            </div>
-
-            <div class="product">
-                <div class="product-img">
-                    <img src="/img/Patacon.png" alt="Producto Patacon">
-                </div>
-                <div class="product-info">
-                    <h4>Patacon Verde</h4>
-                    <p class="desc">4 Tapas Grandes 16 cm</p>
-                    <p class="price">$1.600 - $2.000</p>
-                    <a href="#" class="button">Añadir al carrito</a>
-                </div>
-            </div>
-
-            <div class="product">
-                <div class="product-img">
-                    <img src="/img/Patacon.png" alt="Producto Patacon">
-                </div>
-                <div class="product-info">
-                    <h4>Patacon Verde</h4>
-                    <p class="desc">4 Tapas Grandes 16 cm</p>
-                    <p class="price">$1.600 - $2.000</p>
-                    <a href="#" class="button">Añadir al carrito</a>
-                </div>
-            </div>
-
-            <div class="product">
-                <div class="product-img">
-                    <img src="/img/Patacon.png" alt="Producto Patacon">
-                </div>
-                <div class="product-info">
-                    <h4>Patacon Verde</h4>
-                    <p class="desc">4 Tapas Grandes 16 cm</p>
-                    <p class="price">$1.600 - $2.000</p>
-                    <a href="#" class="button">Añadir al carrito</a>
-                </div>
-            </div>
-
-            <div class="product">
-                <div class="product-img">
-                    <img src="/img/Patacon.png" alt="Producto Patacon">
-                </div>
-                <div class="product-info">
-                    <h4>Patacon Verde</h4>
-                    <p class="desc">4 Tapas Grandes 16 cm</p>
-                    <p class="price">$1.600 - $2.000</p>
-                    <a href="#" class="button">Añadir al carrito</a>
-                </div>
-            </div>
+            {{/each}}
         </div>
-
-
+        {{else}}
+        <p class="no-products">No se han encontrado productos</p>
+        {{/if}}
 
     </main>
     <footer>
@@ -183,6 +72,36 @@
         <p><span>Atención al cliente: +58 424 6438964</span> </p>
         <p>Pataconesenlinea.cl ® Todos los derechos reservados</p>
     </footer>
+
+    {{!-- Portal --}}
+    <div class="portal" id="portal">
+        <div class="portal_box">
+                <div class="portal_product" id="{{@key}}">
+                    <div class="portal_product_info">
+                        <div class="product_img">
+                            <img src="https://firebasestorage.googleapis.com/v0/b/jgp-admin.appspot.com/o/products%2F20200525_230640_200x200.jpg?alt=media&token=acecedd0-a7c6-4a3b-bbb0-3fff93f9c3a3" alt="" id="portalImage">
+                        </div>
+
+                        <div class="portal_desc">
+                            <h4 id="portalTitle">Patacon crudo</h4>
+                            <p class="desc" id="portalDesc">
+                                10 tapas de patacón verder 16cm aprox
+                            </p>
+                            <input type="text" id="productCant" value="1" placeholder="Ingrese cantidad..."/>
+                            <span class="total" id="portalTotal">0 CLP</span>
+                        </div>
+                    </div>
+                    <div class="portal_buttons">
+                        <button  class="button" id="portalAccept">Añadir</button>
+                        <button  class="button" id="portalClose">Cancelar</button>
+                    </div>
+                </div>
+        </div>
+    </div>
+    {{!-- Portal --}}
+
+    <script src="/scripts/products.js"></script>
+    <script src="/scripts/portal.js"></script>
 </body>
 
 </html>
