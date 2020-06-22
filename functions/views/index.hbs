@@ -17,21 +17,29 @@
 
     <header>
         <div class="barra">
-            <nav class="container">
-                <a href="/"><img src="/img/Logo.png" alt="Logotipo Pataconesonline.cl" class="logo"></a>
-                <ul>
-                    <li><a href="/">Inicio</a></li>
-                    <li><a href="#services">Servicios</a></li>
-                    <li><a href="#products">Productos</a></li>
-                    <li><a href="#us">Nosotros</a></li>
-                    <li><a href="#testimonials">Testimoniales</a></li>
-                    <li><a href="#contact">Contacto</a></li>
-                </ul>
+            <div class="container header-content">
+                <a href="/"><img src="/img/Logo.svg" alt="Logotipo Pataconesonline.cl" class="logo"></a>
+                <div class="mobile-menu">
+                    <a href="#navegacion">
+                        <img src="/img/menu-mobile.svg" alt="Icono Menu">
+                    </a>
+                </div>
+
+                <nav>
+                    <ul>
+                        <li><a href="/">Inicio</a></li>
+                        <li><a href="#services">Servicios</a></li>
+                        <li><a href="#products">Productos</a></li>
+                        <li><a href="#us">Nosotros</a></li>
+                        <li><a href="#testimonials">Testimoniales</a></li>
+                        <li><a href="#contact">Contacto</a></li>
+                    </ul>
+                </nav>
                 <a href="/cart" class="cart_link">
-                <img src="/img/Cart.svg" alt="Carrito" class="cart-i">
-                <span id="cart_counter">0</span>
+                    <img src="/img/Cart.svg" alt="Carrito" class="cart-i">
+                    <span id="cart_counter">0</span>
                 </a>
-            </nav>
+            </div>
         </div>
 
         <div class="hero" id="hero">
@@ -210,17 +218,17 @@
         <p class="copy">pataconesenlinea.cl ® Todos los derechos reservados</p>
     </footer>
     <script>
-                function $(id){
+        function $(id) {
             return document.getElementById(id);
         }
-// Set cart counter
-const cartNumber = JSON.parse(localStorage.getItem('cartCount'));
-if(cartNumber){
-    $('cart_counter').innerText = cartNumber;
-}else{
-    $('cart_counter').innerText = 0;
+        // Set cart counter
+        const cartNumber = JSON.parse(localStorage.getItem('cartCount'));
+        if (cartNumber) {
+            $('cart_counter').innerText = cartNumber;
+        } else {
+            $('cart_counter').innerText = 0;
 
-}
+        }
     </script>
 </body>
 

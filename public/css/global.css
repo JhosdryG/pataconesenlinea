@@ -95,12 +95,23 @@ p {
     background-color: var(--lightGreen);
 }
 
-nav {
+.header-content {
     display: flex;
-    justify-content: space-between;
     align-items: center;
-    height: 8rem;
-    width: 100%;
+    justify-content: space-between;
+    padding: 1rem;
+}
+
+
+
+.mobile-menu {
+    width: 5rem;
+}
+
+@media (min-width: 768px) {
+    .mobile-menu {
+        display: none;
+    }
 }
 
 nav ul {
@@ -127,7 +138,7 @@ nav ul li a {
 
 .cart-i {
     width: 3.5rem;
-    margin-left: 10rem;
+    margin-left: 15rem;
 }
 
 .cart_link{

@@ -13,23 +13,32 @@ main {
     margin-bottom: 4rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1100px) {
+    .catalog {
+        display: grid;
+        grid-template-columns: repeat(2, 2fr);
+        grid-gap: 4rem;
+    }
+}
+
+@media (min-width: 1400px) {
     .catalog {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        grid-gap: 5rem;
+        grid-gap: 4rem;
     }
 }
 
 .product {
     display: flex;
     align-items: center;
-    margin-bottom: 4rem;
     width: 42rem;
+    margin: 0 auto 4rem auto;
 }
 
 .product-img img {
     border-radius: 4rem 0 4rem 0;
+    margin-right: 2rem;
     width: 18rem;
     height: 20rem;
     max-width: 20rem;
@@ -37,7 +46,6 @@ main {
 }
 
 .product-info {
-    margin-left: 2rem;
     text-align: left;
 }
 
@@ -62,4 +70,5 @@ main {
     font-size: 1.4rem;
     border: none;
     cursor: pointer;
+    display: inline-block;
 }
