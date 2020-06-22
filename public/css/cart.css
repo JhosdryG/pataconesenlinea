@@ -42,7 +42,7 @@ body{
     border-radius: 4rem 0 4rem 0;
     width: 200rem;
     height: 20rem;
-    max-width: 20rem;
+    max-width: 18rem;
     max-height: 20rem;
     margin-right: 2rem;
 }
@@ -128,11 +128,6 @@ body{
 
 .order-button {
     padding: 5rem;
-}
-
-.order-button {
-    display: block;
-    color: white;
 }
 
 .no_products{

@@ -19,6 +19,10 @@
     margin-left: 18rem;
 }
 
+.hero-content a {
+    display: inline-block;
+}
+
 .hero-content p {
     margin-bottom: 1.5rem;
 }
