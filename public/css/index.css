@@ -1,0 +1,259 @@
+.section {
+    margin-top: 10rem;
+}
+
+.hero {
+    background-image: url(/img/hero.jpg);
+    height: 69.5rem;
+    background-size: cover;
+    background-position: center center;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    background-color: rgba(255, 251, 114, 75%);
+    padding: 4rem;
+    border-radius: 4rem 0 4rem 0;
+    width: 76.5rem;
+    margin-left: 18rem;
+}
+
+.hero-content p {
+    margin-bottom: 1.5rem;
+}
+
+/* Services */
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.card {
+    text-align: center;
+}
+
+.card img {
+    width: 9rem;
+    height: 9rem;
+    margin: 4rem 0;
+}
+
+.card p {
+    margin: 0 auto;
+    width: 28rem;
+}
+
+/* Products */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.products-info ul li{
+    list-style: none;
+    position: relative;
+    
+}
+
+.products-info ul li p {
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.products-info p {
+    margin-bottom: 1rem;
+}
+
+.products-info ul li p::after {
+    content: '';
+    position: absolute;
+    background-image: url(/img/Check.svg);
+    width: 2.5rem;
+    height: 1.89rem;
+    left: -3.3rem;
+    bottom: -0.01rem;
+}
+
+.products-info a {
+    margin-top: 2.5rem;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    background-color: var(--yellow);
+    color: black;
+}
+
+.img-grid {
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 5vw);
+    grid-gap: 1rem;
+}
+
+.img-grid-1 {
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.img-grid-2 {
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 1;
+    grid-row-end: 2;
+}
+
+.img-grid-3 {
+    grid-column-start: 4;
+    grid-column-end: 6;
+    grid-row-start: 3;
+    grid-row-end: 4;
+}
+
+.img-grid-4 {
+    grid-column-start: 6;
+    grid-column-end: 8;
+    grid-row-start: 1;
+    grid-row-end: 1;
+}
+
+/* Us */
+
+.us {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-gap: 5rem;
+}
+
+.us-text {
+    line-height: 1.5;
+}
+
+/* Testimonials */
+
+.quote {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 4rem;
+}
+
+.quote-text-l {
+    margin-right: 8rem;
+}
+
+.quote-text-r {
+    margin-left: 8rem;
+}
+
+blockquote {
+    width: 80rem;
+    background-color: var(--lightGreen);
+    padding: 3rem;
+    position: relative;
+    font-size: 1.6rem;
+    font-style: italic;
+}
+
+.blockquote-l::after {
+    content: '';
+    position: absolute;
+    background-image: url(/img/quote.svg);
+    width: 3.3rem;
+    height: 3rem;
+    bottom: -2.8rem;
+    left: 6rem;
+}
+
+.blockquote-r::after {
+    content: '';
+    position: absolute;
+    background-image: url(/img/quote.svg);
+    width: 3.3rem;
+    height: 3rem;
+    bottom: -3rem;
+    right: 6rem;
+}
+
+.author {
+    margin: 3rem 0 0 0;
+}
+
+.author-l {
+    margin-left: 4rem;
+}
+
+.author-r {
+    text-align: end;
+    margin-right: 4rem;
+}
+
+/* Contact */
+
+#contact{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+#contact h2{
+    width: 100%;
+}
+
+#contact img {
+    width: 15%;
+    height: auto;
+    align-self: center;
+    margin-left: 60px;
+}
+
+@media (max-width: 480px){
+    #contact img{
+        display: none;
+    }
+}   
+
+.form-contact {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    padding: 6rem;
+    background-color: var(--lightYello);
+    text-align: center;
+    border-radius: 4rem 0 4rem 0;
+}
+
+.form-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-contact label {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 2rem;
+    width: 15%;
+}
+
+.form-contact input:not([type="submit"]), textarea {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    border: none;
+    resize: none;
+    outline: none;
+    width: 85%;
+}
+
+.form-contact textarea{
+    width: 85%;
+    height: 15rem;
+}
+
+.form-contact .button{
+    margin-top: 2rem;
+    border: none;
+    align-self: center;
+}

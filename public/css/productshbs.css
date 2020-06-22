@@ -1,0 +1,50 @@
+.section {
+    margin-top: 3rem;
+}
+
+.products-p {
+    font-size: 2rem;
+    font-style: italic;
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.catalog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 6rem;
+}
+
+.product {
+    display: flex;
+    align-items: center;
+}
+
+.product-img img {
+    height: 22rem;
+    width: 23rem;
+}
+
+.product-info {
+    margin-left: 2rem;
+    text-align: left;
+}
+
+.product-info p {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
+}
+
+.price {
+    color: #39D31E;
+    font-weight: bold;
+}
+
+.product-info button {
+    background-color: #EEE712;
+    color: black;
+    font-size: 1.4rem;
+    border: none;
+    cursor: pointer;
+}
