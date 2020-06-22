@@ -13,10 +13,10 @@ if(cartNumber){
 const cartDiv = $('cart');
 let currentCartData;
 
-if(!cartNumber){
+if(!cartNumber || cartNumber === 0){
     cartDiv.innerHTML = `
         <p class="no_products" >Actualmente no hay productos</p>
-    `
+    `;
 }else{
 
    const inCart = JSON.parse(localStorage.getItem('cart'));
@@ -74,7 +74,7 @@ function renderCart(cartData){
                         <p>Precio total: </p>
                         <p class="cart-info-r">${productTotal} CLP</p>
                     </div>
-                    <button>Eliminar</button>
+                    <button onClick="removeProduct('${key}')" >Eliminar</button>
                 </div>
             </div>
         `;
@@ -106,3 +106,39 @@ function renderCart(cartData){
 
     cartDiv.innerHTML = cartList;
 }
+
+
+function removeProduct(key){
+    // Get to remove from localStorage
+    let leftInCart = removeFromStorage(key);
+    // Set cart icon number
+    $('cart_counter').innerText = leftInCart;
+    // remove from current data
+    removeFromCurrentCart(key);
+    if(leftInCart > 0){
+        renderCart(currentCartData);
+    }else{
+        cartDiv.innerHTML = `
+        <p class="no_products" >Actualmente no hay productos</p>
+    `;
+    }
+}
+
+function removeFromStorage(key){
+    let leftInCart = 0;
+    let local = JSON.parse(localStorage.getItem('cart'));
+    delete local[key];
+    leftInCart = Object.keys(local).length;
+    local = JSON.stringify(local);
+    localStorage.setItem('cart',local);
+    localStorage.setItem('cartCount',leftInCart);
+    return leftInCart;
+}
+
+function removeFromCurrentCart(key){
+    let {cart, total} = currentCartData;
+    total -= cart[key].productTotal;
+    delete cart[key];
+    currentCartData = {cart, total};
+}
+
