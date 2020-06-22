@@ -21,7 +21,7 @@ if(!cartNumber || cartNumber === 0){
 
    const inCart = JSON.parse(localStorage.getItem('cart'));
    // console.log(inCart);
-
+    // Laru0410
     const info = {
             method: 'POST',
             body: JSON.stringify({inCart}),
