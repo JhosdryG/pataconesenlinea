@@ -130,6 +130,25 @@ nav ul li a {
     margin-left: 10rem;
 }
 
+.cart_link{
+    padding: 15px;
+    position: relative;
+    text-decoration: none;
+}
+
+.cart_link .cart_counter{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 5px;
+    background-color: rgb(243, 241, 144);
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    border: none;
+    border-radius: 50%;
+}
+
 /* Footer */
 
 footer {
