@@ -36,7 +36,12 @@ addTocartButtons.forEach(button => {
 
 // Set cart counter
 const cartNumber = JSON.parse(localStorage.getItem('cartCount'));
-$('cart_counter').innerText = cartNumber;
+if(cartNumber){
+    $('cart_counter').innerText = cartNumber;
+}else{
+    $('cart_counter').innerText = 0;
+
+}
 
 function setPortal(product){
     $('portalImage').src = $q(`#${product} img`).src;

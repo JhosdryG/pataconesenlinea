@@ -1,8 +1,13 @@
+body{
+    position: relative!important;
+}
+
 .section {
     margin-top: 3rem;
 }
 
 .cart {
+    position: relative;
     display: flex;
 }
 
@@ -43,7 +48,7 @@
     margin-left: 10rem;
 }
 
-.cart-product-info a {
+.cart-product-info button {
     color: #DB1E1E;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
@@ -110,4 +115,10 @@
 .order-button a {
     display: block;
     color: white;
+}
+
+.no_products{
+    text-align: center;
+    justify-self: center;
+    width: 100%;
 }

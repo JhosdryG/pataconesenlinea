@@ -124,8 +124,14 @@
                 function $(id){
             return document.getElementById(id);
         }
-        const cartNumber = JSON.parse(localStorage.getItem('cartCount'));
-        $('cart_counter').innerText = cartNumber;
+// Set cart counter
+const cartNumber = JSON.parse(localStorage.getItem('cartCount'));
+if(cartNumber){
+    $('cart_counter').innerText = cartNumber;
+}else{
+    $('cart_counter').innerText = 0;
+
+}
     </script>
 </body>
 </html>
