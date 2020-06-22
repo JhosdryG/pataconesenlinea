@@ -17,14 +17,28 @@
 
 .sale {
     display: flex;
+    flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+    .sale {
+        flex-direction: row;
+    }
 }
 
 .sale-contact {
     background-color: #EDE163;
-    margin-right: 6rem;
     border: 0.1rem solid #7E7777;
     border-radius: 4rem 0 4rem 0;
     padding: 4rem;
+    margin-top: 4rem;
+}
+
+@media (min-width: 768px) {
+    .sale-contact {
+        margin-right: 6rem;
+        margin-top: 0;
+    }
 }
 
 .form-sale label {
@@ -125,16 +139,37 @@
 .platanito-u img {
     width: 35rem;
     height: 25rem;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .platanito-u img {
+        display: block;
+    }
 }
 
 .platanito-b {
     display: flex;
     align-items: flex-end;
-    padding-bottom: 15rem;
+    
+}
+
+@media (min-width: 768px) {
+    .platanito-b {
+        display: block;
+        padding-bottom: 15rem;
+    }
 }
 
 .platanito-b img {
     width: 30rem;
     height: 25rem;
     margin-left: 2rem;
+    display: none;
+}
+
+@media (min-width: 768px) {
+    .platanito-b img {
+        display: block;
+    }
 }

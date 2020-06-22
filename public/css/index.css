@@ -25,13 +25,22 @@
 
 /* Services */
 
-.services {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+@media (min-width: 768px) {
+    .services {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .card {
     text-align: center;
+    margin-bottom: 6rem;
+}
+
+@media (min-width: 768px) {
+    .card {
+        margin-bottom: 0;
+    }
 }
 
 .card img {
@@ -47,9 +56,11 @@
 
 /* Products */
 
-.products {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+@media (min-width: 768px) {
+    .products {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
 
 .products-info ul li{
@@ -63,8 +74,22 @@
     font-weight: 700;
 }
 
+@media (min-width: 768px) {
+    .products-info ul li p {
+        text-align: left;
+    }
+}
+
 .products-info p {
     margin-bottom: 1rem;
+    margin-left: 4rem;
+}
+
+@media (min-width: 768px) {
+    .products-info p {
+        text-align: left;
+        margin-left: 0;
+    }
 }
 
 .products-info ul li p::after {
@@ -73,8 +98,15 @@
     background-image: url(/img/Check.svg);
     width: 2.5rem;
     height: 1.89rem;
-    left: -3.3rem;
+    left: 1rem;
     bottom: -0.01rem;
+}
+
+@media (min-width: 768px) {
+    .products-info ul li p::after {
+        left: -3.3rem;
+        bottom: -0.01rem;
+    }
 }
 
 .products-info a {
@@ -87,10 +119,17 @@
 }
 
 .img-grid {
+    margin-bottom: 16rem;
     display: grid;
     grid-template-columns: repeat(8, 1fr);
     grid-template-rows: repeat(4, 5vw);
     grid-gap: 1rem;
+}
+
+@media (min-width: 768px) {
+    .img-grid {
+        margin-bottom: 0;
+    }
 }
 
 .img-grid-1 {
@@ -122,14 +161,34 @@
 /* Us */
 
 .us {
-    display: grid;
-    grid-template-columns: 1fr 3fr;
-    grid-gap: 5rem;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+@media (min-width: 768px) {
+    .us {
+        display: grid;
+        grid-template-columns: 1fr 3fr;
+        grid-gap: 5rem;
+    }
 }
 
 .us-text {
     line-height: 1.5;
 }
+
+.us img {
+    margin-top: 2rem;
+    align-self: center;
+    width: 25rem;
+}
+
+@media (min-width: 768px) {
+    .us img {
+        margin-top: 0;
+    }
+}
+
 
 /* Testimonials */
 
@@ -137,7 +196,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-bottom: 4rem;
+    margin-bottom: 6rem;
 }
 
 .quote-text-l {
@@ -149,12 +208,17 @@
 }
 
 blockquote {
-    width: 80rem;
     background-color: var(--lightGreen);
     padding: 3rem;
     position: relative;
     font-size: 1.6rem;
     font-style: italic;
+}
+
+@media (min-width: 768px) {
+    blockquote {
+        width: 80rem;
+    }
 }
 
 .blockquote-l::after {
@@ -191,24 +255,25 @@ blockquote {
 }
 
 /* Contact */
+@media (min-width: 768px) {
+    #contact{
+        display: flex;
+        flex-wrap: wrap;
+    }
 
-#contact{
-    display: flex;
-    flex-wrap: wrap;
+    #contact h2{
+        width: 100%;
+    }
+    
+    #contact img {
+        width: 15%;
+        height: auto;
+        align-self: center;
+        margin-left: 60px;
+    }
 }
 
-#contact h2{
-    width: 100%;
-}
-
-#contact img {
-    width: 15%;
-    height: auto;
-    align-self: center;
-    margin-left: 60px;
-}
-
-@media (max-width: 480px){
+@media (min-width: 480px){
     #contact img{
         display: none;
     }
