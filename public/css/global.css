@@ -136,7 +136,7 @@ nav ul li a {
     text-decoration: none;
 }
 
-.cart_link .cart_counter{
+.cart_link #cart_counter{
     position: absolute;
     top: 0;
     right: 0;

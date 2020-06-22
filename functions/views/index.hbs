@@ -29,7 +29,7 @@
                 </ul>
                 <a href="/cart" class="cart_link">
                 <img src="/img/Cart.svg" alt="Carrito" class="cart-i">
-                <span class="cart_counter">0</span>
+                <span id="cart_counter">0</span>
                 </a>
             </nav>
         </div>
@@ -209,6 +209,13 @@
         </div>
         <p class="copy">pataconesenlinea.cl ® Todos los derechos reservados</p>
     </footer>
+    <script>
+                function $(id){
+            return document.getElementById(id);
+        }
+        const cartNumber = JSON.parse(localStorage.getItem('cartCount'));
+        $('cart_counter').innerText = cartNumber;
+    </script>
 </body>
 
 </html>
