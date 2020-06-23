@@ -127,6 +127,6 @@ main {
     background-color: #FAF8BB;
 }
 
-.incart-img {
+.incart img {
     filter: grayscale(75%);
 }
