@@ -1,17 +1,41 @@
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
     .cart-i {
         margin-left: 15rem;
     }
 }
 
+nav ul {
+    display: block;
+}
+
+.back {
+    margin-right: 0;
+    margin-left: 1rem;
+    font-size: 1.2rem;
+}
+
+@media (min-width: 1200px) {
+    .back {
+        font-size: 1.6rem
+    }
+}
+
 .section {
-    margin-top: 3rem;
+    margin-top: 11rem;
 }
 
 #sale h3 {
-    font-size: 3.5rem;
+    font-size: 2.5rem;
     text-transform: initial;
     margin-bottom: 1rem;
+}
+
+@media (min-width: 1200px) {
+    #sale h3 {
+        font-size: 3.5rem;
+        text-transform: initial;
+        margin-bottom: 1rem;
+    }
 }
 
 .text-sale {
@@ -19,6 +43,13 @@
     padding-bottom: 2rem;
     border-bottom: 0.05rem solid #7E7777;
     margin-bottom: 4rem;
+    font-size: 1.5rem;
+}
+
+@media (min-width: 1200px) {
+    .text-sale {
+        font-size: 2rem;
+    }
 }
 
 .sale {
@@ -26,7 +57,7 @@
     flex-direction: column-reverse;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
     .sale {
         flex-direction: row;
     }
@@ -36,33 +67,52 @@
     background-color: #EDE163;
     border: 0.1rem solid #7E7777;
     border-radius: 4rem 0 4rem 0;
-    padding: 4rem;
+    padding: 2rem;
     margin-top: 4rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
     .sale-contact {
-        margin-right: 6rem;
+        margin-right: 3rem;
         margin-top: 0;
+        padding: 4rem;
     }
 }
 
 .form-sale label {
     display: block;
     font-family: 'Roboto', sans-serif;
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: 1rem;
+}
+
+@media (min-width: 1200px) {
+    .form-sale label {
+        font-size: 2rem;
+    }
 }
 
 .form-sale input:not([type="submit"]), textarea {
     padding: 1.5rem;
     margin-bottom: 2rem;
     border: none;
-    width: 45rem;
+    width: 100%;
     height: 3.8rem;
     display: block; 
     margin-bottom: 2rem;
+}
+
+@media (min-width: 1200px) {
+    .form-sale input:not([type="submit"]), textarea {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+        border: none;
+        width: 35rem;
+        height: 3.8rem;
+        display: block; 
+        margin-bottom: 2rem;
+    }
 }
 
 .form-sale textarea {
@@ -80,13 +130,21 @@
 .sale-total p {
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
-    font-size: 2.5rem;
+    font-size: 1.5rem;
+}
+
+@media (min-width: 1200px) {
+    .sale-total p {
+        font-size: 2.5rem;
+    }
 }
 
 .sale-bt {
     display: inline-block;
     border: none;
     width: 100%;
+    font-size: 1.8rem;
+    cursor: pointer;
 }
 
 .sale-process {
@@ -94,21 +152,57 @@
     flex-direction: column;
 }
 
+@media (min-width: 730px) {
+    .sale-process {
+        flex-direction: row;
+        justify-content: space-around;
+    }
+}
+
+@media (min-width: 1200px) {
+    .sale-process {
+        flex-direction: column;
+        justify-content: initial;
+    }
+}
+
+
 .sale-info {
     background-color: #EDE163;
     border: 0.1rem solid #7E7777;
     border-radius: 4rem 0 4rem 0;
-    padding: 4rem;
+    padding: 2rem;
+    width: 26rem;
+}
+
+@media (min-width: 1200px) {
+    .sale-info {
+        padding: 4rem;
+        width: 100%;
+    }
 }
 
 .sale-info h4 {
-    font-size: 2.5rem;
+    font-size: 2rem;
+}
+
+@media (min-width: 1200px) {
+    .sale-info h4 {
+        font-size: 2.5rem;
+    }
 }
 
 .sale-info p {
-    font-size: 1.8rem;
+    font-size: 1.4rem;
     line-height: 2;
     margin-bottom: 2rem;
+}
+
+@media (min-width: 1200px) {
+    .sale-info p {
+        font-size: 1.8rem;
+        text-align: left;
+    }
 }
 
 .sale-info p:last-of-type {
@@ -134,8 +228,14 @@
 }
 
 .instruction {
-    font-size: 2.2rem;
+    font-size: 1.8rem;
     font-weight: bold;
+}
+
+@media (min-width: 1200px) {
+    .instruction {
+        font-size: 2.2rem;
+    }
 }
 
 .platanito-u {
@@ -144,12 +244,12 @@
 }
 
 .platanito-u img {
-    width: 35rem;
-    height: 25rem;
+    width: 20rem;
+    height: 15rem;
     display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
     .platanito-u img {
         display: block;
     }
@@ -161,21 +261,21 @@
     
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
     .platanito-b {
         display: block;
-        padding-bottom: 15rem;
     }
 }
 
 .platanito-b img {
-    width: 30rem;
-    height: 25rem;
+    width: 20rem;
+    height: 15rem;
+    margin-top: 1rem;
     margin-left: 2rem;
     display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
     .platanito-b img {
         display: block;
     }
