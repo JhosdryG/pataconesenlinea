@@ -2,6 +2,7 @@
     box-sizing: inherit;
     margin: 0;
     padding: 0;
+    outline: none;
 }
 
 html {
@@ -100,6 +101,11 @@ p {
     font-family: 'Roboto', sans-serif;
     font-weight: bold;
     font-size: 2rem;
+    transition: ease .4s;
+}
+
+.button:hover {
+    background-color: #165F09;
 }
 
 /* Header */
@@ -155,6 +161,10 @@ nav ul li:last-of-type {
 nav ul li a {
     text-decoration: none;
     color: black;
+}
+
+nav ul li a:hover {
+    color: white;
 }
 
 .back {
