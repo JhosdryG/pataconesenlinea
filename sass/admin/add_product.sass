@@ -5,6 +5,9 @@
 main,body
     background-color: $primary-light!important
 
+main 
+    padding: 50px 20px!important
+
 .form
     padding: 20px
     background: $primary
@@ -30,6 +33,8 @@ main,body
                 border-radius: 10px
                 background-color: $primary-light
                 grid-area: image
+                
+
             &.section_form
                 padding: 20px
                 border-radius: 10px
@@ -44,8 +49,7 @@ main,body
 
         #productImage
             width: 100%
-            height: auto
-            max-height: 265px
+            max-height: 300px
             margin: 35px auto
             margin-top: 0
             border: none
@@ -94,12 +98,13 @@ main,body
     .button_group
         display: grid
         grid-template-columns: 1fr
-        padding: 20px 100px
+        
         @include tablet()
             grid-area: buttons
             grid-template-columns: repeat(2, 1fr)
             justify-content: center
             grid-gap: 20px
+            padding: 20px 100px
 
             &.update
                 grid-template-columns: repeat(3, 1fr)
@@ -112,19 +117,20 @@ main,body
             width: 100%
             font-size: 1.1rem
             text-align: center
-            color: $dark
-            border: 2px solid $secondary
+            color: #fff
+            border: none
             border-radius: 6px
             cursor: pointer
 
             &_add
-                background-color: $primary-light
+                background-color: $secondary
+                
 
             &_delete
                 background-color: #e93731
 
             &_back
-                background-color: $primary-light
+                background-color: $secondary
 
 #smallImage
     display: none
