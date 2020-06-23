@@ -32,13 +32,13 @@ img {
 
 h1 {
     font-weight: bold;
-    font-size: 4.5rem;
+    font-size: 3.5rem;
     margin: 0 0 1.5rem 0;
 }
 
 h2 {
     font-weight: 600;
-    font-size: 3.5rem;
+    font-size: 3rem;
     color: var(--headingGreen);
     text-align: center;
     margin: 0 0 4rem 0;
@@ -106,13 +106,13 @@ p {
     padding: 1rem;
 }
 
-
-
 .mobile-menu {
-    width: 5rem;
+    width: 4rem;
+    margin: 0 auto;
+    margin-left: 1rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1200px) {
     .mobile-menu {
         display: none;
     }
@@ -120,6 +120,13 @@ p {
 
 nav ul {
     list-style: none;
+    display: none;
+}
+
+@media (min-width: 1200px) {
+    nav ul {
+        display: block;
+    }
 }
 
 nav ul li {
@@ -142,7 +149,6 @@ nav ul li a {
 
 .cart-i {
     width: 3.5rem;
-    margin-left: 15rem;
 }
 
 .cart_link{
@@ -180,15 +186,20 @@ footer {
 }
 
 .social-media {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 1rem 0
+    margin: 1rem 
+}
+
+@media (min-width: 1200px) {
+    .social-media {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .social-media img {
     width: 3rem;
-    margin: 0 1rem 0 2rem
+    margin: 1rem 1rem 1rem 2rem
 }
 
 .social-media p {
