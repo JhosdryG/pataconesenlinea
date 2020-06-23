@@ -8,6 +8,7 @@ html {
     font-size: 62.5%;
     /* Reset para REMS - 62.5% = 10px de 16px */
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 body {
@@ -18,7 +19,15 @@ body {
     --yellow: #EEE712;
     --lightYello: #FFFB72;
     font-family: 'Montserrat', sans-serif;
+    
 }
+
+
+@media (min-width: 768px) {
+    section, #products{
+        padding-top: 100px;
+    }
+}   
 
 .container {
     width: 90%;
@@ -96,7 +105,12 @@ p {
 /* Header */
 
 .barra {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     background-color: var(--lightGreen);
+    z-index: 1000;
 }
 
 .header-content {
