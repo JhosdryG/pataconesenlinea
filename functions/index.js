@@ -6,6 +6,8 @@ const path = require('path');
 const helmet = require('helmet');
 const app = express();
 
+app.use(express.urlencoded({extended:false}));
+
 // Settings
 app.set('port', process.env.PORT || 3000);
 app.set('views', './views');
@@ -17,6 +19,7 @@ app.use(helmet());
 app.use(require('./routes/login'));
 app.use(require('./routes/admin'));
 app.use(require('./routes/web'));
+app.use(require('./routes/mail'));
 
 
 // Static files

@@ -262,6 +262,7 @@ blockquote {
 @media (min-width: 768px) {
     #contact{
         display: flex;
+        justify-content: center;
         flex-wrap: wrap;
     }
 
@@ -286,7 +287,7 @@ blockquote {
 .form-contact {
     display: flex;
     flex-direction: column;
-    width: 80%;
+    width: 60%;
     padding: 6rem;
     background-color: var(--lightYello);
     text-align: center;

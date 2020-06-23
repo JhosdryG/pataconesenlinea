@@ -1,3 +1,4 @@
+
 function $(id){
     return document.getElementById(id);
 }
@@ -41,7 +42,8 @@ if(!cartNumber || cartNumber === 0){
 
         if(res.status === 200){
             currentCartData = res.cartData;
-            renderSale(currentCartData);
+            renderSale(currentCartData); 
+            $('formButton').addEventListener('click', sendMail)
         }
     }).catch(err => {
         console.log(err);
@@ -53,6 +55,131 @@ function renderSale(cartData){
     sale.innerHTML = template(total);
 }
 
+ function sendMail(){
+
+    const form = getFormData();
+    if(!validateFormData(form)){
+        console.log('no valid');
+        return null;
+    }
+
+    sendingMail()
+
+    const {cart, total} = currentCartData;
+
+    console.log(cart);
+
+     const info = {
+        method: 'POST',
+        body: JSON.stringify({form, cart, total}),
+        headers:{
+            'Content-Type': 'application/json'
+        }
+    }
+
+    //dev
+    const url = 'http://localhost:5000/sale';
+    // production
+    //const url = 'https://jgp-admin/sale';
+
+    emailFetch(url,info);
+
+ }
+
+ function noValid(message){
+    Swal.fire({
+        title: message,
+        icon: 'warning'
+    });
+ }
+
+ function sendingMail(){
+    Swal.fire({
+        title: 'Enviando información',
+        text: 'Por favor espere',
+        allowOutsideClick: false,
+        onBeforeOpen: () => {
+            Swal.showLoading();
+        }
+    });
+ }
+
+ function sendCorrect(){
+    Swal.fire({
+        title: 'Informacion enviada correctamente',
+        text: "Revisaremos la orden, espere nuestra respuesta!",
+        icon: 'success',
+        allowOutsideClick: false,
+        preConfirm: () => {
+            localStorage.clear();
+            location.href = `/`;
+        }  
+    });
+ }
+
+ function validateFormData(form){
+
+     const {name,apellido,email,telefono,direccion,referencia,mensaje} = form;
+
+    const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+    const numberRegex = /^[0-9]+$/;
+
+
+    if(
+        name.trim() === '' ||
+        apellido.trim() === '' ||
+        direccion.trim() === '' ||
+        referencia.trim() === '' ||
+        email.trim() === '' ||
+        telefono.trim() === '' 
+    ) {
+        noValid('Debe rellenar todos los campos');
+        return false;
+    }
+
+    if(!emailRegex.test(email)){ 
+        noValid('Ingrese una dirección de correo valida.');
+        return false;
+    }
+    if(!numberRegex.test(telefono)){
+        noValid('El numero de telefono solo debe contener carácteres numéricos');
+        return false;
+    }
+
+    if(!numberRegex.test(referencia)){ 
+        noValid('El numero de referencia solo debe contener carácteres numéricos');
+        return false;
+    }
+
+    return true;
+
+ }
+
+ function getFormData(){
+     return {
+         name: $('name').value,
+         apellido: $('apellido').value,
+         email: $('email').value,
+         telefono: $('telefono').value,
+         direccion: $('direccion').value,
+         referencia: $('referencia').value,
+         mensaje: $('mensaje').value
+     }
+ }
+
+ function emailFetch(url, info){
+
+    fetch(url,info)
+    .then( res => res.json())
+    .then(res => {
+        if(res.status === 200){
+            sendCorrect()
+        }
+    }).catch(err => {
+        console.log(err);
+    })
+ }
+
 function template(total) {
 return `
 <div class="platanito-u">
@@ -60,7 +187,7 @@ return `
 </div>
 
     <div class="sale-contact">
-    <form action="" class="form-sale">
+    <form class="form-sale">
         <label for="name">Nombre:</label>
         <input type="text" id="name" placeholder="Inserta tu nombre" required>
 
@@ -80,14 +207,14 @@ return `
         <input type="text" id="referencia" placeholder="Inserta el número de referencia bancaria" required>
 
         <label for="mensaje">Mensaje:</label>
-        <textarea name="" id="mensaje" cols="30" rows="10"></textarea>
+        <textarea  id="mensaje" cols="30" rows="10"></textarea>
 
         <div class="sale-total">
             <p>Total a pagar</p>
             <p>${total} CLP</p>
         </div>
-
-        <input type="submit" class="button sale-bt">
+    </form>
+    <button id="formButton" class="button sale-bt" >Enviar</button>
     </div>
 
     <div class="sale-process">
