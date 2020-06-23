@@ -13,18 +13,69 @@
 
 .hero-content {
     background-color: rgba(255, 251, 114, 75%);
-    padding: 4rem;
+    padding: 2rem;
     border-radius: 4rem 0 4rem 0;
-    width: 76.5rem;
-    margin-left: 18rem;
+    max-width: 58rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+}
+
+p {
+    font-size: 1.5rem;
+}
+
+h3 {
+    font-size: 2.2rem;
+}
+
+@media (min-width: 768px) {
+    h3 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    p {
+        font-size: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    h1 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-content {
+        margin-left: 18rem;
+        padding: 4rem;
+    }
 }
 
 .hero-content a {
-    display: inline-block;
+    display: block;
+    font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .hero-content a {
+        display: inline-block;
+        font-size: 2rem;
+    }
 }
 
 .hero-content p {
     margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .hero-content p {
+        margin-bottom: 1.5rem;
+        font-size: 2rem;
+    }
 }
 
 /* Services */
@@ -120,6 +171,13 @@
     text-align: center;
     background-color: var(--yellow);
     color: black;
+    font-size: 1.5rem;
+}
+
+@media (min-width: 768px) {
+    .products-info a {
+        font-size: 2rem;
+    }
 }
 
 .img-grid {
@@ -184,12 +242,13 @@
 .us img {
     margin-top: 2rem;
     align-self: center;
-    width: 25rem;
+    width: 15rem;
 }
 
 @media (min-width: 768px) {
     .us img {
         margin-top: 0;
+        width: 25rem;
     }
 }
 
@@ -197,19 +256,31 @@
 /* Testimonials */
 
 .quote {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 6rem;
+    display: flex;
+    flex-direction: column;
 }
 
-.quote-text-l {
-    margin-right: 8rem;
-}
+@media (min-width: 768px) {
+    .quote {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 6rem;
+    }
+}    
 
-.quote-text-r {
-    margin-left: 8rem;
-}
+@media (min-width: 768px) {
+    .quote-text-l {
+        margin-right: 8rem;
+    }
+}  
+
+@media (min-width: 768px) {
+    .quote-text-r {
+        margin-left: 8rem;
+    }
+}  
 
 blockquote {
     background-color: var(--lightGreen);

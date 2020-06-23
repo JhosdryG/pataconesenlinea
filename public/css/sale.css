@@ -1,3 +1,9 @@
+@media (min-width: 768px) {
+    .cart-i {
+        margin-left: 15rem;
+    }
+}
+
 .section {
     margin-top: 3rem;
 }
@@ -62,6 +68,7 @@
 .form-sale textarea {
     height: 8rem;
     margin-bottom: 3rem;
+    resize: none;
 }
 
 .sale-total {
