@@ -31,7 +31,7 @@ if(!cartNumber || cartNumber === 0){
         }
     
     //dev
-    const url = 'http://localhost:5000/cart';
+    const url = '/cart';
     // production
     //const url = 'https://pataconesenlinea.web.app/cart';
 

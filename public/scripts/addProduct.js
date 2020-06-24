@@ -5,7 +5,7 @@ const getFirebase = async () => {
     // production
     //const certFetch = await fetch('https://pataconesenlinea.web.app/admin/cert');
     // dev
-    const certFetch = await fetch('http://localhost:5000/admin/cert');
+    const certFetch = await fetch('/admin/cert');
     const cert = await certFetch.json();
     await firebase.initializeApp(cert);
 };
@@ -144,7 +144,7 @@ const fetchData = product => {
     // Production
     //const fetchUrl = 'https:///pataconesenlinea.web.app/admin/product/';   
     // Development    
-    const fetchUrl = 'http://localhost:5000/admin/product';
+    const fetchUrl = '/admin/product';
     const info = fetchInfoConstructor(product);
     
     Swal.fire({
@@ -237,7 +237,7 @@ const deleteProduct = (key, pass, urlHash) => {
     // Production
     //const fetchUrl = 'https:///pataconesenlinea.web.app/admin/product/';   
     // Development    
-    const fetchUrl = 'http://localhost:5000/admin/product';
+    const fetchUrl = '/admin/product';
 
     Swal.fire({
         title: '¿Está seguro?',
