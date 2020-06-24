@@ -2,11 +2,11 @@ const functions = require('firebase-functions');
 const admin = require('firebase-admin');
 
 // Development Credentials
-   var serviceAccount = require("../../jgp-admin-firebase-adminsdk-koimr-de33c5fdf0.json");
+   var serviceAccount = require("../../pataconesenlinea-f3a50-firebase-adminsdk-coa3o-f391094d0f.json");
    admin.initializeApp({
     credential: admin.credential.cert(serviceAccount),
-     databaseURL: "https://jgp-admin.firebaseio.com",
-     storageBucket: "gs://jgp-admin.appspot.com"
+     databaseURL: "https://pataconesenlinea-f3a50.firebaseio.com",
+     storageBucket: "gs://pataconesenlinea-f3a50.appspot.com"
    });
 
 // Production Credentials

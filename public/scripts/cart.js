@@ -33,7 +33,7 @@ if(!cartNumber || cartNumber === 0){
     //dev
     const url = 'http://localhost:5000/cart';
     // production
-    //const url = 'https://jgp-admin/cart';
+    //const url = 'https://pataconesenlinea.web.app/cart';
 
     fetch(url,info)
     .then( res => res.json())

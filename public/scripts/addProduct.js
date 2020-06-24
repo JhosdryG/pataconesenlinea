@@ -3,7 +3,7 @@
 // Initalizate Firebase app
 const getFirebase = async () => {
     // production
-    //const certFetch = await fetch('https://jgp-admin.web.app/admin/cert');
+    //const certFetch = await fetch('https://pataconesenlinea.web.app/admin/cert');
     // dev
     const certFetch = await fetch('http://localhost:5000/admin/cert');
     const cert = await certFetch.json();
@@ -142,7 +142,7 @@ const getResizeFilename = (file, size) => {
 // Post product to firebase db
 const fetchData = product => {
     // Production
-    //const fetchUrl = 'https://jgp-admin.web.app/admin/product/';   
+    //const fetchUrl = 'https:///pataconesenlinea.web.app/admin/product/';   
     // Development    
     const fetchUrl = 'http://localhost:5000/admin/product';
     const info = fetchInfoConstructor(product);
@@ -235,7 +235,7 @@ const deleteProduct = (key, pass, urlHash) => {
         }
     }
     // Production
-    //const fetchUrl = 'https://jgp-admin.web.app/admin/product/';   
+    //const fetchUrl = 'https:///pataconesenlinea.web.app/admin/product/';   
     // Development    
     const fetchUrl = 'http://localhost:5000/admin/product';
 

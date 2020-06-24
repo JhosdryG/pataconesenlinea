@@ -34,7 +34,7 @@ if(!cartNumber || cartNumber === 0){
     //dev
     const url = 'http://localhost:5000/cart';
     // production
-    //const url = 'https://jgp-admin/cart';
+    //const url = 'https://pataconesenlinea.web.app/cart';
 
     fetch(url,info)
     .then( res => res.json())
@@ -80,7 +80,7 @@ function renderSale(cartData){
     //dev
     const url = 'http://localhost:5000/sale';
     // production
-    //const url = 'https://jgp-admin/sale';
+    //const url = 'https://pataconesenlinea.web.app/sale';
 
     emailFetch(url,info);
 
