@@ -19,8 +19,7 @@ body {
     --headingGreen: #39D31E;
     --yellow: #EEE712;
     --lightYello: #FFFB72;
-    font-family: 'Montserrat', sans-serif;
-    
+    font-family: 'Montserrat', sans-serif;  
 }
 
 
@@ -115,15 +114,20 @@ p {
     top: 0;
     left: 0;
     width: 100%;
+    max-width: 100%;
     background-color: var(--lightGreen);
     z-index: 1000;
 }
 
 .header-content {
+    position: relative;
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 1rem;
+    width: 100%;
+    max-width: 100%;
+    
 }
 
 .mobile-menu {
@@ -138,20 +142,35 @@ p {
     }
 }
 
+nav {
+    position: absolute;
+    top: 99%;
+    left: 0;
+    width: 100%;
+    max-width: 100%;
+    background-color: var(--lightGreen);
+    z-index: 100;
+}
+
 nav ul {
     list-style: none;
-    display: none;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    max-width: 100%;
 }
 
 @media (min-width: 1200px) {
     nav ul {
-        display: block;
+        flex-direction: row;
     }
 }
 
 nav ul li {
-    display: inline-block;
-    margin-right: 4rem;
+    padding: 10px;
+        width: 100%;
+    max-width: 100%;
 }
 
 nav ul li:last-of-type {
@@ -168,7 +187,7 @@ nav ul li a:hover {
 }
 
 .back {
-    margin-right: 10rem;
+    /* margin-right: 10rem; */
 }
 
 .cart-i {
