@@ -1,5 +1,5 @@
-*, *:before, *:after {
-    box-sizing: inherit;
+*{
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
     outline: none;
@@ -10,6 +10,8 @@ html {
     /* Reset para REMS - 62.5% = 10px de 16px */
     box-sizing: border-box;
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    
 }
 
 body {
@@ -20,6 +22,7 @@ body {
     --yellow: #EEE712;
     --lightYello: #FFFB72;
     font-family: 'Montserrat', sans-serif;  
+    overflow-x: hidden;
 }
 
 
@@ -107,84 +110,114 @@ p {
     background-color: #165F09;
 }
 
-/* Header */
 
-.barra {
+
+/* Menu */
+
+nav{
     position: fixed;
+    position: -webkit-sticky;
     top: 0;
-    left: 0;
     width: 100%;
-    max-width: 100%;
-    background-color: var(--lightGreen);
-    z-index: 1000;
+    background-color: var(--headingGreen);
+    z-index: 100;
 }
 
-.header-content {
-    position: relative;
+nav .container {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    padding: 1rem;
+    background-color: var(--headingGreen);
+    align-items: center;
+    padding: 20px 0;
+    height: 100%;
+}
+
+nav .container ul {
+    position: absolute;
+    top: -250%;
+    left: 0;
     width: 100%;
-    max-width: 100%;
+    background-color: var(--headingGreen);
+    list-style: none;
+    transition: all .4s ease-out;
+    z-index: -10;
+}
+nav .container ul.active {
+    top: 98%;
+}
+
+nav .container ul li{
+    width: 100%;
     
+    text-align: center;
+}
+
+nav .container ul li:hover{
+    background-color: var(--darkGreen);
+    cursor: pointer;
+}
+
+nav .container ul li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 15px;
+    text-decoration: none;
+    color: black;
 }
 
 .mobile-menu {
     width: 4rem;
-    margin: 0 auto;
-    margin-left: 1rem;
+    margin: 0 20px;
+    cursor: pointer;
 }
 
-@media (min-width: 1200px) {
+/* Desktop menu design */
+
+@media (min-width: 420px) {
+    nav .container ul.active {
+        top: 100%;
+    } 
+}
+
+
+
+@media (min-width: 720px) {
+
+    nav .container ul{
+        position: relative;
+        top: 0!important;
+        display: flex;
+        flex-direction: row;
+        z-index: 1;
+    }
+
+    nav .container ul li{
+        text-align: center;
+        padding: 5px;
+    }
+
+    nav .container ul li:hover{
+        text-align: center;
+        background-color: var(--headingGreen);
+        color: #FFF;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    nav .container ul li:hover a {
+        color: #FFF;
+    }
+
     .mobile-menu {
         display: none;
     }
 }
 
-nav {
-    position: absolute;
-    top: 99%;
-    left: 0;
-    width: 100%;
-    max-width: 100%;
-    background-color: var(--lightGreen);
-    z-index: 100;
-}
 
-nav ul {
-    list-style: none;
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-    width: 100%;
-    max-width: 100%;
-}
 
-@media (min-width: 1200px) {
-    nav ul {
-        flex-direction: row;
-    }
-}
 
-nav ul li {
-    padding: 10px;
-        width: 100%;
-    max-width: 100%;
-}
 
-nav ul li:last-of-type {
-    margin-right: 0;
-}
-
-nav ul li a {
-    text-decoration: none;
-    color: black;
-}
-
-nav ul li a:hover {
-    color: white;
-}
 
 .back {
     /* margin-right: 10rem; */

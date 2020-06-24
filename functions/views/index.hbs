@@ -4,14 +4,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD
-    <title>Patacones En Línea</title>
-=======
     <title>Tapas de Patacones Venezolanos en Chile - Patacones En Línea</title>
     <meta name="description"
         content="¿Te gustaría degustar unos patacones y no sabes por dónde empezar? Te ofrecemos las mejores tapas de patacones venezolanos de todo chile al mejor precio.">
     <link rel="icon" type="image/png" href="/img/Platanos.png">
->>>>>>> 2181c79c8276bcdd07de6a03658161927fa5f51f
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,400&display=swap"
@@ -23,47 +19,48 @@
 
 <body>
 
-    <header>
-        <div class="barra">
-            <div class="container header-content">
-                <a href="/"><img src="/img/Logo.png" alt="Logotipo Pataconesonline.cl" class="logo"></a>
-                <div class="mobile-menu">
-                    <a href="#navegacion">
-                        <img src="/img/menu-mobile.svg" alt="Icono Menu">
-                    </a>
-                </div>
+    <nav id="navegacion">
+        <div class="container">
+            
+            <a href="/">
+                <img src="/img/Logo.png" alt="Logotipo Pataconesonline.cl" class="logo" />
+            </a>
 
-                <nav id="navegacion">
-                    <ul>
-                        <li><a href="#hero">Inicio</a></li>
-                        <li><a href="#services">Servicios</a></li>
-                        <li><a href="#products">Productos</a></li>
-                        <li><a href="#us">Nosotros</a></li>
-                        <li><a href="#testimonials">Testimoniales</a></li>
-                        <li><a href="#contact">Contacto</a></li>
-                    </ul>
-                </nav>
-                <a href="/cart" class="cart_link">
-                    <img src="/img/Cart.svg" alt="Carrito" class="cart-i">
-                    <span id="cart_counter">0</span>
+            <ul id="menu">
+                <li><a href="#hero">Inicio</a></li>
+                <li><a href="#services">Servicios</a></li>
+                <li><a href="#products">Productos</a></li>
+                <li><a href="#us">Nosotros</a></li>
+                <li><a href="#testimonials">Testimoniales</a></li>
+                <li><a href="#contact">Contacto</a></li>
+            </ul>
+
+            <div class="mobile-menu" id="menuButton">
+                <a href="#navegacion">
+                    <img src="/img/menu-mobile.svg" alt="Icono Menu">
                 </a>
             </div>
+                        
+            <a href="/cart" class="cart_link">
+                <img src="/img/Cart.svg" alt="Carrito" class="cart-i">
+                <span id="cart_counter">0</span>
+            </a>
         </div>
+    </nav>
 
+
+    <header>
         <div class="hero" id="hero">
-            <div class="hero-content container" data-aos="fade-right">
-<<<<<<< HEAD
-                <h1>LOS MEJORES PATACONES <span class="yellow">VENE</span><span class="blue">ZOLA</span><span
-                        class="red">NOS</span> EN CHILE</h1>
-                <p>Frescura en nuestros patacones como materia prima que nos identifica 100 % Natural.</p>
-=======
+            <div class="container">
+                           <div class="hero-content" data-aos="fade-right">
                 <h1>LAS MEJORES TAPAS DE PATACONES <span class="yellow">VENE</span><span class="blue">ZOLA</span><span
                         class="red">NOS</span> EN CHILE</h1>
                 <p>Compra tus tapas de patacones caseros con el sazón venezolano que tanto te gusta y te lo llevamos
                     hasta la puerta de tu casa</p>
->>>>>>> 2181c79c8276bcdd07de6a03658161927fa5f51f
                 <a href="/products" class="button">Realiza tu pedido</a>
             </div>
+            </div>
+ 
         </div>
     </header>
 
@@ -94,12 +91,6 @@
         <h2 data-aos="fade-down">Nuestros Productos</h2>
         <div class="products">
             <div class="img-grid">
-<<<<<<< HEAD
-                <img src="/img/Producto1.png" alt="Patacones" class="img-grid-1" loading="lazy" data-aos="fade-right">
-                <img src="/img/Producto2.png" alt="Patacones" class="img-grid-2" loading="lazy" data-aos="fade-down">
-                <img src="/img/Producto4.png" alt="Patacones" class="img-grid-3" loading="lazy" data-aos="fade-left">
-                <img src="/img/Producto3.png" alt="Patacones" class="img-grid-4" loading="lazy" data-aos="fade-up">
-=======
                 <img src="/img/Producto1.png" alt="Tapas de Patacones" class="img-grid-1" loading="lazy"
                     data-aos="fade-right">
                 <img src="/img/Producto2.png" alt="Tapas de Patacones" class="img-grid-2" loading="lazy"
@@ -108,7 +99,6 @@
                     data-aos="fade-left">
                 <img src="/img/Producto3.png" alt="Tapas de Patacones" class="img-grid-4" loading="lazy"
                     data-aos="fade-up">
->>>>>>> 2181c79c8276bcdd07de6a03658161927fa5f51f
             </div>
             <div class="products-info" data-aos="fade-left">
                 <ul>
@@ -137,7 +127,7 @@
             </div>
         </div>
     </main>
-
+    
     <section id="us" class="section container">
         <h2 data-aos="fade-down">Sobre Nosotros</h2>
         <div class="us">
@@ -265,6 +255,15 @@
             $('cart_counter').innerText = 0;
 
         }
+
+        // Menu logic
+
+        const menuButton = $('menuButton')
+        const menu = $('menu');
+
+        menuButton.addEventListener('click', () => {
+            menu.classList.toggle('active');
+        });
 
         AOS.init({
             easing: 'ease',

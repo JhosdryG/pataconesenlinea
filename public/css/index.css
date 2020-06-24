@@ -2,10 +2,6 @@
     margin-top: 10rem;
 }
 
-nav:target {
-    display: block;
-}
-
 
 .hero {
     padding: 20px;
@@ -22,7 +18,6 @@ nav:target {
     background-color: rgba(255, 251, 114, 75%);
     padding: 2rem;
     border-radius: 4rem 0 4rem 0;
-    max-width: 80rem;
 }
 
 .yellow {
@@ -75,9 +70,15 @@ h3 {
 }
 
 @media (min-width: 1000px) {
+    .hero{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+
+    }
     .hero-content {
+        max-width: 800px;
         text-align: left;
-        margin-left: 18rem;
         padding: 4rem;
     }
 }
