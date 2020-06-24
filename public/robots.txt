@@ -1,0 +1,13 @@
+User-agent: *
+Disallow: /cart/
+Disallow: /admin/
+Disallow: /login/
+Disallow: /productos/
+Disallow: /sale/
+Disallow: /addProduct/
+Noindex: /cart/
+Noindex: /admin/
+Noindex: /login/
+Noindex: /productos/
+Noindex: /sale/
+Noindex: /addProduct/
