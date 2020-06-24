@@ -9,6 +9,8 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,400&display=swap"
         rel="stylesheet">
+
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/products_portal.css">
     <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/productshbs.css">
@@ -34,11 +36,11 @@
 
     <main class="container section">
 
-        <h2>Productos</h2>
-        <p class="products-p">Precio al mayor aplica desde la cantidad de 6 productos</p>
+        <h2 data-aos="fade-down">Productos</h2>
+        <p class="products-p" data-aos="fade-down">Precio al mayor aplica desde la cantidad de 6 productos</p>
 
         {{#if products}}
-        <div class="catalog">
+        <div class="catalog" data-aos="flip-up">
             {{#each products}}
             <div class="product" id="{{@key}}">
                 <div class="product-img">
@@ -104,7 +106,14 @@
         </div>
     </div>
     {{!-- Portal --}}
-
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            easing: 'ease',
+            duration: 1200,
+            once: true
+        });
+    </script>
     <script src="/scripts/products.js"></script>
     <script src="/scripts/portal.js"></script>
 </body>
