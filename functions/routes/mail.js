@@ -66,4 +66,42 @@ router.post('/sale', (req, res) => {
 });
 
 
+router.post('/contact', (req, res) => {
+
+  const {name,email,telefono,mensaje} = req.body;
+
+  const transporter = nodemailer.createTransport({
+    service: 'gmail',
+    auth: {
+      user: 'devsktop@gmail.com',
+      pass: 'bbtgacbotvhllxlw'
+    }
+});
+
+  const message = `
+    ${mensaje}
+
+    Información de contacto:
+    Nombre: ${name}
+    Telefono: ${telefono}
+    Correo: ${email}
+  `;
+
+const mailOptions = {
+    from: 'devsktop@gmail.com',
+    to: 'devsktop@gmail.com',
+    subject: 'Mensaje de contacto',
+    text: message
+};
+
+
+transporter.sendMail(mailOptions, (error, info) => {
+    if (error) {
+      res.redirect('/');
+    } else {
+      res.redirect('/');
+    }
+  });
+})
+
 module.exports = router;

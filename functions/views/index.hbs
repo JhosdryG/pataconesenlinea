@@ -179,26 +179,27 @@
         <h2>Contáctanos</h2>
 
         <div class="contact_box">
-            <form action="" class="form-contact">
+            <form action="/contact" method="POST" class="form-contact">
 
                 <div class="form-group">
                     <label for="name">Nombre:</label>
-                    <input type="text" id="name" placeholder="Inserta tu nombre" required>
+                    <input type="text" name="name" placeholder="Inserta tu nombre" required>
                 </div>
 
                 <div class="form-group">
                     <label for="email">Email:</label>
-                    <input type="email" id="email" placeholder="Inserta tu email" required>
+                    <input type="email" name="email" placeholder="Inserta tu email" required>
                 </div>
 
                 <div class="form-group">
                     <label for="telefono">Teléfono:</label>
-                    <input type="tel" id="telefono" placeholder="Inserta tu teléfono" required>
+                    <input type="tel" name="telefono" placeholder="Inserta tu teléfono" 
+                    required />
                 </div>
 
                 <div class="form-group">
                     <label for="mensaje">Mensaje:</label>
-                    <textarea name="" id="mensaje"></textarea>
+                    <textarea name="mensaje" required></textarea>
                 </div>
 
                 <input type="submit" class="button">
