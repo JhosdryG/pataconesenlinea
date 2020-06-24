@@ -74,7 +74,7 @@ function renderCart(cartData){
                         <p>Precio total: </p>
                         <p class="cart-info-r">${productTotal} CLP</p>
                     </div>
-                    <button onClick="removeProduct('${key}')">Eliminar</button>
+                    <button onClick="removeProduct('${key}')">Retirar</button>
                 </div>
             </div>
         `;

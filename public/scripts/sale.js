@@ -209,6 +209,11 @@ return `
         <label for="mensaje">Mensaje:</label>
         <textarea  id="mensaje" cols="30" rows="10"></textarea>
 
+        <div class="checkbox">
+            <input type="checkbox" name="check" id="check">
+            <label for="check">Quiero delivery</label>
+        </div>
+
         <div class="sale-total">
             <p>Total a pagar</p>
             <p>${total} CLP</p>

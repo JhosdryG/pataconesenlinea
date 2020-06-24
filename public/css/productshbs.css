@@ -123,6 +123,10 @@ main {
     background-color: #F8F599;
 }
 
+.portal_buttons button {
+    display: inline-block;
+}
+
 .incart button{
     background-color: #FAF8BB;
 }
