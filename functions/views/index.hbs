@@ -9,6 +9,7 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,400&display=swap"
         rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <link rel="stylesheet" href="/css/global.css">
     <link rel="stylesheet" href="/css/index.css">
 </head>
@@ -43,8 +44,9 @@
         </div>
 
         <div class="hero" id="hero">
-            <div class="hero-content contenedor">
-                <h1>LOS MEJORES PATACONES <span class="yellow">VENE</span><span class="blue">ZOLA</span><span class="red">NOS</span> EN CHILE</h1>
+            <div class="hero-content contenedor" data-aos="fade-right">
+                <h1>LOS MEJORES PATACONES <span class="yellow">VENE</span><span class="blue">ZOLA</span><span
+                        class="red">NOS</span> EN CHILE</h1>
                 <p>Frescura en nuestros patacones como materia prima que nos identifica 100 % Natural.</p>
                 <a href="/products" class="button">Realiza tu pedido</a>
             </div>
@@ -52,38 +54,38 @@
     </header>
 
     <section class="container section" id="services">
-        <h2>Nuestros Servicios</h2>
-        <div class="services">
+        <h2 data-aos="fade-down">Nuestros Servicios</h2>
+        <div class="services" data-aos="fade-up">
             <div class="card">
                 <h3>Al Mayor Y Al Detal</h3>
-                <img src="/img/Dolar.svg" alt="Reloj">
+                <img src="/img/Dolar.svg" alt="Reloj" loading="lazy">
                 <p>Los mejores patacones del mercado y al mejor precio</p>
             </div>
 
             <div class="card">
                 <h3>24 Horas 7 Días</h3>
-                <img src="/img/Clock.svg" alt="Dolar">
+                <img src="/img/Clock.svg" alt="Dolar" loading="lazy">
                 <p>Rapidez de respuesta en línea 24 horas los 7 días de la semana</p>
             </div>
 
             <div class="card">
                 <h3>100% Natural</h3>
-                <img src="/img/Leaf.svg" alt="Leaf">
+                <img src="/img/Leaf.svg" alt="Leaf" loading="lazy">
                 <p>Frescura en nuestros patacones como materia prima que nos identifica</p>
             </div>
         </div>
     </section>
 
     <main id="products" class="container section">
-        <h2>Nuestros Productos</h2>
+        <h2 data-aos="fade-down">Nuestros Productos</h2>
         <div class="products">
             <div class="img-grid">
-                <img src="/img/Producto1.png" alt="Patacones" class="img-grid-1">
-                <img src="/img/Producto2.png" alt="Patacones" class="img-grid-2">
-                <img src="/img/Producto4.png" alt="Patacones" class="img-grid-3">
-                <img src="/img/Producto3.png" alt="Patacones" class="img-grid-4">
+                <img src="/img/Producto1.png" alt="Patacones" class="img-grid-1" loading="lazy" data-aos="fade-right">
+                <img src="/img/Producto2.png" alt="Patacones" class="img-grid-2" loading="lazy" data-aos="fade-down">
+                <img src="/img/Producto4.png" alt="Patacones" class="img-grid-3" loading="lazy" data-aos="fade-left">
+                <img src="/img/Producto3.png" alt="Patacones" class="img-grid-4" loading="lazy" data-aos="fade-up">
             </div>
-            <div class="products-info">
+            <div class="products-info" data-aos="fade-left">
                 <ul>
                     <li>
                         <p>Patacones verdes y amarillos</p>
@@ -109,10 +111,10 @@
     </main>
 
     <section id="us" class="section container">
-        <h2>Sobre Nosotros</h2>
+        <h2 data-aos="fade-down">Sobre Nosotros</h2>
         <div class="us">
-            <img src="/img/Platano.png" alt="Nosotros Platano Imagen">
-            <div class="us-text">
+            <img src="/img/Platano.png" alt="Nosotros Platano Imagen" loading="lazy" data-aos="fade-right">
+            <div class="us-text" data-aos="fade-left">
                 <p>Nuestro servicio está orientado a satisfacer y facilitar las necesidades de ese público que quiere y
                     desea
                     comer rico, delicioso y de una forma práctica, con sabor venezolano hecho por venezolanos; motivados
@@ -136,38 +138,37 @@
     </section>
 
     <section id="testimonials" class="container section">
-        <h2>Nuestros Clientes Satisfechos</h2>
+        <h2 data-aos="fade-down">Nuestros Clientes Satisfechos</h2>
 
-        <div class="quote">
+        <div class="quote" data-aos="fade-left">
             <div class="quote-text-l">
                 <blockquote class="blockquote-l">"Muy buenos los patacones, súper fácil de despegar no tuvimos ningún
                     problema, muy atentos a la hora de realizar el producto"</blockquote>
-                <p class="author author-l">Alejandro Gonzalez</p>
+                <p class="author author-l">Tamara Greaves</p>
             </div>
-            <img src="/img/Testimonial1.png" alt="Patacon Testimonial">
+            <img src="/img/Testimonial1.png" alt="Patacon Testimonial" loading="lazy">
         </div>
 
-        <div class="quote">
-
-            <img src="/img/Testimonial2.png" alt="Patacon Testimonial">
+        <div class="quote" data-aos="fade-right">
+            <img src="/img/Testimonial2.png" alt="Patacon Testimonial" loading="lazy">
             <div class="quote-text-r">
                 <blockquote class="blockquote-r">"Extraordinario el producto, excelente de verdad nos encantó, se
                     entregó el tiempo acordado sin ningún problema"</blockquote>
-                <p class="author author-r">Alejandro Gonzalez</p>
+                <p class="author author-r">Fernando Nieto</p>
             </div>
         </div>
 
-        <div class="quote">
+        <div class="quote" data-aos="fade-left">
             <div class="quote-text-l">
                 <blockquote class="blockquote-l">"Están buenos y se ve muy bien que vengan sellados, la atención fue
                     excelente"</blockquote>
                 <p class="author author-l">Alejandro Gonzalez</p>
             </div>
-            <img src="/img/Testimonial3.png" alt="Patacon Testimonial">
+            <img src="/img/Testimonial3.png" alt="Patacon Testimonial" loading="lazy">
         </div>
 
-        <div class="quote">
-            <img src="/img/Testimonial4.png" alt="Patacon Testimonial">
+        <div class="quote" data-aos="fade-right">
+            <img src="/img/Testimonial4.png" alt="Patacon Testimonial" loading="lazy">
             <div class="quote-text-r">
                 <blockquote class="blockquote-r">"Muchas gracias estaban muy ricas"</blockquote>
                 <p class="author author-r">Alejandro Gonzalez</p>
@@ -176,10 +177,10 @@
     </section>
 
     <section id="contact" class="container section">
-        <h2>Contáctanos</h2>
+        <h2 data-aos="fade-down">Contáctanos</h2>
 
         <div class="contact_box">
-            <form action="/contact" method="POST" class="form-contact">
+            <form action="/contact" method="POST" class="form-contact" data-aos="fade-right">
 
                 <div class="form-group">
                     <label for="name">Nombre:</label>
@@ -205,23 +206,27 @@
                 <input type="submit" class="button">
             </form>
 
-            <img src="/img/Platanotlf.png" alt="">
+            <img src="/img/Platanotlf.png" alt="" loading="lazy" data-aos="fade-left">
         </div>
-        
+
     </section>
 
     <footer>
         <div class="logo-footer">
-            <img src="/img/Logo-Footer.png" alt="Logotipo">
+            <img src="/img/Logo-Footer.png" alt="Logotipo" loading="lazy">
         </div>
         <div class="social-media">
             <p>Contáctanos +56 954351213</p>
-            <img src="/img/IG.svg" alt="Instagram">
+            <a href="https://www.instagram.com/pataconesenlinea.cl/"><img src="/img/IG.svg" alt="Instagram"
+                    loading="lazy"></a>
             <p>@pataconesenlinea.cl</p>
         </div>
         <p class="copy">pataconesenlinea.cl ® Todos los derechos reservados</p>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+
         function $(id) {
             return document.getElementById(id);
         }
@@ -233,6 +238,12 @@
             $('cart_counter').innerText = 0;
 
         }
+
+        AOS.init({
+            easing: 'ease',
+            duration: 1200,
+            once: true
+        });
     </script>
 </body>
 
