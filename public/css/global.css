@@ -285,3 +285,20 @@ footer {
     font-size: 1.4rem;
     font-weight: 300;
 }
+
+
+.fa-whatsapp {
+    display: inline-block;
+    padding: 10px;
+    text-align: center;
+    color: #FFF;
+    position: fixed;
+    left: 50px;
+    bottom: 50px;
+    font-size: 4rem;
+    text-decoration: none;
+    background: #2fd043;
+    border: none;
+    border-radius: 50%;
+    z-index: 10000;
+} 
