@@ -440,4 +440,11 @@ blockquote {
     #contact img{
         display: none;
     }
-}   
+}
+
+.fa-whatsapp {
+    position: fixed;
+    font-size: 4rem;
+    text-decoration: none;
+    margin-left: 1rem;
+} 
