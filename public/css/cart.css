@@ -306,15 +306,15 @@ nav .container {
 
 nav .container ul {
     position: relative;
-    top: 0;
     background-color: var(--lightGreen);
     list-style: none;
     z-index: 10;
 }
 
 nav .container ul li{
-    width: 100%;
+    display: inline!important;
     text-align: center;
+    padding: 0;
 }
 
 nav .container ul li:hover{
@@ -323,6 +323,7 @@ nav .container ul li:hover{
 }
 
 nav .container ul li a {
+    display: inline;
     padding: 15px;
     text-decoration: none;
     color: black;
