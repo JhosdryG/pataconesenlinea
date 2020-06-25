@@ -434,6 +434,7 @@ blockquote {
     align-self: center;
     width: 100%; 
     cursor: pointer;
+
 }
 
 @media (max-width: 420px){
@@ -442,9 +443,3 @@ blockquote {
     }
 }
 
-.fa-whatsapp {
-    position: fixed;
-    font-size: 4rem;
-    text-decoration: none;
-    margin-left: 1rem;
-} 
