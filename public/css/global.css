@@ -125,14 +125,14 @@ nav{
     position: -webkit-sticky;
     top: 0;
     width: 100%;
-    background-color: var(--headingGreen);
+    background-color: var(--lightGreen);
     z-index: 100;
 }
 
 nav .container {
     display: flex;
     justify-content: space-between;
-    background-color: var(--headingGreen);
+    background-color: var(--lightGreen);
     align-items: center;
     padding: 20px 0;
     height: 100%;
@@ -143,7 +143,7 @@ nav .container ul {
     top: -250%;
     left: 0;
     width: 100%;
-    background-color: var(--headingGreen);
+    background-color: var(--lightGreen);
     list-style: none;
     transition: all .4s ease-out;
     z-index: -10;
@@ -154,7 +154,6 @@ nav .container ul.active {
 
 nav .container ul li{
     width: 100%;
-    
     text-align: center;
 }
 
