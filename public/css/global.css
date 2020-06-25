@@ -223,6 +223,7 @@ nav .container ul li a {
 
 .cart-i {
     width: 3.5rem;
+    margin: 0!important;
 }
 
 .cart_link{
@@ -244,6 +245,7 @@ nav .container ul li a {
     text-align: center;
     border: none;
     border-radius: 50%;
+   
 }
 
 /* Footer */
@@ -293,9 +295,9 @@ footer {
     text-align: center;
     color: #FFF;
     position: fixed;
-    left: 50px;
-    bottom: 50px;
-    font-size: 4rem;
+    left: 20px;
+    bottom: 20px;
+    font-size: 3rem;
     text-decoration: none;
     background: #2fd043;
     border: none;

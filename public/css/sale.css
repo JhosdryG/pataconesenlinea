@@ -325,3 +325,68 @@ main {
 .no_products {
     margin: 0 auto;
 }
+
+
+
+
+/* Menu */
+
+nav{
+    position: fixed;
+    position: -webkit-sticky;
+    top: 0;
+    width: 100%;
+    background-color: var(--lightGreen);
+    z-index: 100;
+}
+
+nav .container {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--lightGreen);
+    align-items: center;
+    padding: 20px 0;
+    height: 100%;
+}
+
+nav .container ul {
+    position: relative;
+    top: 0;
+    background-color: var(--lightGreen);
+    list-style: none;
+    z-index: 10;
+}
+
+nav .container ul li{
+    width: 100%;
+    text-align: center;
+}
+
+nav .container ul li:hover{
+    background-color: var(--lightGreen);
+    cursor: pointer;
+}
+
+nav .container ul li a {
+    padding: 15px;
+    text-decoration: none;
+    color: black;
+}
+
+.mobile-menu {
+    display: none!important;
+}
+
+/* Desktop menu design */
+
+
+@media (min-width: 720px) {
+
+    nav .container ul li:hover a {
+        color: #FFF;
+    }
+
+    .mobile-menu {
+        display: none;
+    }
+}
