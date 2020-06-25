@@ -75,7 +75,7 @@ function addToCart(){
 function updateInterface(){
     portal.classList.toggle('active');
     $q(`#${currentProduct} button`).disabled = true;
-    $q(`#${key} button`).innerText = 'Ya en el carrito';
+    $q(`#${currentProduct} button`).innerText = 'Ya en el carrito';
     $(currentProduct).classList.toggle('incart');
 }
 
