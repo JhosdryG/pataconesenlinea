@@ -22,11 +22,11 @@
         transition: all .4s ease-out
         &:hover
             transform: scale(1.01)
-            background: rgb(61,150,14);
-            background: -moz-linear-gradient(0deg, rgba(61,150,14,1) 17%, rgba(245,240,113,1) 99%);
-            background: -webkit-linear-gradient(0deg, rgba(61,150,14,1) 17%, rgba(245,240,113,1) 99%);
-            background: linear-gradient(0deg, rgba(61,150,14,1) 17%, rgba(245,240,113,1) 99%);
-            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3d960e",endColorstr="#f5f071",GradientType=1);
+            background: rgb(61,150,14)
+            background: -moz-linear-gradient(0deg, rgba(61,150,14,1) 17%, rgba(245,240,113,1) 99%)
+            background: -webkit-linear-gradient(0deg, rgba(61,150,14,1) 17%, rgba(245,240,113,1) 99%)
+            background: linear-gradient(0deg, rgba(61,150,14,1) 17%, rgba(245,240,113,1) 99%)
+            filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3d960e",endColorstr="#f5f071",GradientType=1)
 
         &_imgbox_img
 
@@ -64,8 +64,14 @@
                 
 .header .container
     display: flex
-    justify-content: space-between
+    flex-direction: column
+    justify-content: center
     align-items: center
+
+    @include tablet()
+        flex-direction: row
+        justify-content: space-between
+        align-items: center    
 
     #addProduct
         display: block
@@ -76,6 +82,9 @@
         border-radius: 10px
         font-size: 1.2rem
         cursor: pointer
+
+        
+
         &:hover
             background-color: $secondary-light
 
