@@ -163,7 +163,8 @@ function renderSale(cartData){
          telefono: $('telefono').value,
          direccion: $('direccion').value,
          referencia: $('referencia').value,
-         mensaje: $('mensaje').value
+         mensaje: $('mensaje').value,
+         check: $('check').checked,
      }
  }
 
@@ -206,12 +207,12 @@ return `
         <label for="referencia">Número de referencia bancaria:</label>
         <input type="text" id="referencia" placeholder="Inserta el número de referencia bancaria" required>
 
-        <label for="mensaje">Mensaje:</label>
+        <label for="mensaje">Mensaje (Opcional):</label>
         <textarea  id="mensaje" cols="30" rows="10"></textarea>
 
         <div class="checkbox">
             <input type="checkbox" name="check" id="check">
-            <label for="check">Quiero delivery</label>
+            <label for="check">Quiero delivery (Opcional)</label>
         </div>
 
         <div class="sale-total">
