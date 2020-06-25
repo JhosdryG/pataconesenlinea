@@ -273,6 +273,14 @@
             menu.classList.toggle('active');
         });
 
+        const options = document.querySelectorAll('#menu a');
+
+        options.forEach(a => {
+            a.addEventListener('click', () => {
+                menu.classList.toggle('active');
+            });
+        });
+
         AOS.init({
             easing: 'ease',
             duration: 1200,
