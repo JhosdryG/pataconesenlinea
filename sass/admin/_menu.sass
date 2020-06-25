@@ -80,8 +80,13 @@
             display: flex
             width: 100%
             background-color: #262626
-            padding: 15px
-            padding-left: 12px
+            padding: 5px
+            border-radius: 50%
+            margin-right: 15px
+            @include tablet()
+                padding: 15px
+                padding-left: 12px
+                border-radius: 0
         .logo_mini
             width: 36px
             height: 29px
