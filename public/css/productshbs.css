@@ -205,4 +205,13 @@ nav .container ul li a {
     .mobile-menu {
         display: none;
     }
+
+}
+
+
+.product_img img {
+    width: 18rem;
+    height: 20rem;
+    max-width: 18rem;
+    max-height: 20rem;
 }
