@@ -58,7 +58,7 @@
     @include tablet()
         height: 100%
         width: 55px
-        transition: all .4s ease-out
+        transition: all .2s ease-out
 
         &.active
             width: 170px
@@ -76,8 +76,20 @@
         min-height: 68px
         background-color: $secondary
 
-        .logo
-            margin-right: 20px
+        .logo_mini
+            width: 36px
+            height: 29px
+            align-self: flex-start
+            margin-left: 12px
+            margin-bottom: 10px
+
+            &.active
+                align-self: center
+                width: 80px
+                height: 29px
+                margin-left: 0
+            
+
 
         .icon_text
             display: none
