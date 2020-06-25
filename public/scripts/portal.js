@@ -13,18 +13,30 @@ const portalAccept = document.getElementById('portalAccept');
 const portalClose = document.getElementById('portalClose');
 const portal = document.getElementById('portal');
 
-cantInput.addEventListener('keyup', (e) => {
+cantInput.addEventListener('keypress', (e) => {
     const key = e.key;
     const noNumberRegex = /^[0-9]*$/;
-    const detailLimit = 5;  
+    
 
     if(!noNumberRegex.test(key) && e.keyCode !== 8){
-        return e.preventDefault();
+        e.preventDefault();
+        return null;
     }
 
+
+});
+
+cantInput.addEventListener('keyup', (e) => {
     let total = 0;
     let cant = parseInt(cantInput.value, 10);
+    const detailLimit = 5; 
 
+    if(cant > 20){
+        cantInput.value = 20;
+    }
+
+    cant = parseInt(cantInput.value, 10);
+    
     if(cant > 0 && cant <= detailLimit){
         total = productsPrices[currentProduct].detail * cant;
     }else if(cant > 0 && cant > detailLimit){
