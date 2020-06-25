@@ -130,6 +130,11 @@ main {
 
 .incart button{
     background-color: #FAF8BB;
+    cursor: not-allowed;
+}
+
+.incart button:hover{
+    background-color: #FAF8BB;
 }
 
 .incart img {

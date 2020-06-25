@@ -187,7 +187,7 @@ nav .container ul li a {
 
 
 
-@media (min-width: 720px) {
+@media (min-width: 1000px) {
 
     nav .container ul{
         position: relative;
@@ -204,7 +204,7 @@ nav .container ul li a {
 
     nav .container ul li:hover{
         text-align: center;
-        background-color: var(--headingGreen);
+        background-color: var(--lightGreen);
         color: #FFF;
         cursor: pointer;
         padding: 5px;
