@@ -228,7 +228,7 @@ return `
         <h4>Datos Bancarios</h4>
         <p>Elizabeth Urdaneta 26.814.385-8 <br>
             elizabethurdaneta66@gmail.com <br>
-            +56 954351213</p>
+            +56 920821237</p>
         <p>Banco Santander <br>
             Cuenta Corriente # 74-97737-5</p>
         <p>Banco estado <br>
