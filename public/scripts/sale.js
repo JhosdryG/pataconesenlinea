@@ -1,188 +1,189 @@
-
-function $(id){
-    return document.getElementById(id);
+function $(id) {
+  return document.getElementById(id);
 }
 // Set cart counter
-const cartNumber = JSON.parse(localStorage.getItem('cartCount'));
-if(cartNumber){
-    $('cart_counter').innerText = cartNumber;
-}else{
-    $('cart_counter').innerText = 0;
+const cartNumber = JSON.parse(localStorage.getItem("cartCount"));
+if (cartNumber) {
+  $("cart_counter").innerText = cartNumber;
+} else {
+  $("cart_counter").innerText = 0;
 }
 
 // render sale
-const sale = $('saleRender');
+const sale = $("saleRender");
 let currentCartData;
 
-if(!cartNumber || cartNumber === 0){
-    sale.innerHTML = `
+if (!cartNumber || cartNumber === 0) {
+  sale.innerHTML = `
         <p class="no_products" >Actualmente no hay productos</p>
     `;
-}else{
+} else {
+  const inCart = JSON.parse(localStorage.getItem("cart"));
+  // console.log(inCart);
+  // Laru0410
+  const info = {
+    method: "POST",
+    body: JSON.stringify({ inCart }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
 
-   const inCart = JSON.parse(localStorage.getItem('cart'));
-   // console.log(inCart);
-    // Laru0410
-    const info = {
-            method: 'POST',
-            body: JSON.stringify({inCart}),
-            headers:{
-                'Content-Type': 'application/json'
-            }
-        }
-    
-    //dev
-    const url = '/cart';
-    // production
-    //const url = 'https://pataconesenlinea.web.app/cart';
+  //dev
+  const url = "/cart";
+  // production
+  //const url = 'https://pataconesenlinea.web.app/cart';
 
-    fetch(url,info)
-    .then( res => res.json())
-    .then(res => {
-
-        if(res.status === 200){
-            currentCartData = res.cartData;
-            renderSale(currentCartData); 
-            $('formButton').addEventListener('click', sendMail)
-        }
-    }).catch(err => {
-        console.log(err);
+  fetch(url, info)
+    .then((res) => res.json())
+    .then((res) => {
+      if (res.status === 200) {
+        currentCartData = res.cartData;
+        renderSale(currentCartData);
+        $("formButton").addEventListener("click", sendMail);
+      }
     })
+    .catch((err) => {
+      console.log(err);
+    });
 }
 
-function renderSale(cartData){
-    const {cart, total} = cartData;
-    sale.innerHTML = template(total);
+function renderSale(cartData) {
+  const { cart, total } = cartData;
+  sale.innerHTML = template(total);
 }
 
- function sendMail(){
+function sendMail() {
+  const form = getFormData();
+  if (!validateFormData(form)) {
+    console.log("no valid");
+    return null;
+  }
 
-    const form = getFormData();
-    if(!validateFormData(form)){
-        console.log('no valid');
-        return null;
-    }
+  sendingMail();
 
-    sendingMail()
+  const { cart, total } = currentCartData;
 
-    const {cart, total} = currentCartData;
+  console.log(cart);
 
-    console.log(cart);
+  const info = {
+    method: "POST",
+    body: JSON.stringify({ form, cart, total }),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
 
-     const info = {
-        method: 'POST',
-        body: JSON.stringify({form, cart, total}),
-        headers:{
-            'Content-Type': 'application/json'
-        }
-    }
+  //dev
+  const url = "/sale";
+  // production
+  //const url = 'https://pataconesenlinea.web.app/sale';
 
-    //dev
-    const url = '/sale';
-    // production
-    //const url = 'https://pataconesenlinea.web.app/sale';
+  emailFetch(url, info);
+}
 
-    emailFetch(url,info);
+function noValid(message) {
+  Swal.fire({
+    title: message,
+    icon: "warning",
+  });
+}
 
- }
+function sendingMail() {
+  Swal.fire({
+    title: "Enviando información",
+    text: "Por favor espere",
+    allowOutsideClick: false,
+    onBeforeOpen: () => {
+      Swal.showLoading();
+    },
+  });
+}
 
- function noValid(message){
-    Swal.fire({
-        title: message,
-        icon: 'warning'
-    });
- }
+function sendCorrect() {
+  Swal.fire({
+    title: "Informacion enviada correctamente",
+    text: "Revisaremos la orden, espere nuestra respuesta!",
+    icon: "success",
+    allowOutsideClick: false,
+    preConfirm: () => {
+      localStorage.clear();
+      location.href = `/`;
+    },
+  });
+}
 
- function sendingMail(){
-    Swal.fire({
-        title: 'Enviando información',
-        text: 'Por favor espere',
-        allowOutsideClick: false,
-        onBeforeOpen: () => {
-            Swal.showLoading();
-        }
-    });
- }
+function validateFormData(form) {
+  const {
+    name,
+    apellido,
+    email,
+    telefono,
+    direccion,
+    referencia,
+    mensaje,
+  } = form;
 
- function sendCorrect(){
-    Swal.fire({
-        title: 'Informacion enviada correctamente',
-        text: "Revisaremos la orden, espere nuestra respuesta!",
-        icon: 'success',
-        allowOutsideClick: false,
-        preConfirm: () => {
-            localStorage.clear();
-            location.href = `/`;
-        }  
-    });
- }
+  const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  const numberRegex = /^[0-9]+$/;
 
- function validateFormData(form){
+  if (
+    name.trim() === "" ||
+    apellido.trim() === "" ||
+    direccion.trim() === "" ||
+    referencia.trim() === "" ||
+    email.trim() === "" ||
+    telefono.trim() === ""
+  ) {
+    noValid("Debe rellenar todos los campos");
+    return false;
+  }
 
-     const {name,apellido,email,telefono,direccion,referencia,mensaje} = form;
+  if (!emailRegex.test(email)) {
+    noValid("Ingrese una dirección de correo valida.");
+    return false;
+  }
+  if (!numberRegex.test(telefono)) {
+    noValid("El numero de telefono solo debe contener carácteres numéricos");
+    return false;
+  }
 
-    const emailRegex = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    const numberRegex = /^[0-9]+$/;
+  if (!numberRegex.test(referencia)) {
+    noValid("El numero de referencia solo debe contener carácteres numéricos");
+    return false;
+  }
 
+  return true;
+}
 
-    if(
-        name.trim() === '' ||
-        apellido.trim() === '' ||
-        direccion.trim() === '' ||
-        referencia.trim() === '' ||
-        email.trim() === '' ||
-        telefono.trim() === '' 
-    ) {
-        noValid('Debe rellenar todos los campos');
-        return false;
-    }
+function getFormData() {
+  return {
+    name: $("name").value,
+    apellido: $("apellido").value,
+    email: $("email").value,
+    telefono: $("telefono").value,
+    direccion: $("direccion").value,
+    referencia: $("referencia").value,
+    mensaje: $("mensaje").value,
+    check: $("check").checked,
+  };
+}
 
-    if(!emailRegex.test(email)){ 
-        noValid('Ingrese una dirección de correo valida.');
-        return false;
-    }
-    if(!numberRegex.test(telefono)){
-        noValid('El numero de telefono solo debe contener carácteres numéricos');
-        return false;
-    }
-
-    if(!numberRegex.test(referencia)){ 
-        noValid('El numero de referencia solo debe contener carácteres numéricos');
-        return false;
-    }
-
-    return true;
-
- }
-
- function getFormData(){
-     return {
-         name: $('name').value,
-         apellido: $('apellido').value,
-         email: $('email').value,
-         telefono: $('telefono').value,
-         direccion: $('direccion').value,
-         referencia: $('referencia').value,
-         mensaje: $('mensaje').value,
-         check: $('check').checked,
-     }
- }
-
- function emailFetch(url, info){
-
-    fetch(url,info)
-    .then( res => res.json())
-    .then(res => {
-        if(res.status === 200){
-            sendCorrect()
-        }
-    }).catch(err => {
-        console.log(err);
+function emailFetch(url, info) {
+  fetch(url, info)
+    .then((res) => res.json())
+    .then((res) => {
+      if (res.status === 200) {
+        sendCorrect();
+      }
     })
- }
+    .catch((err) => {
+      console.log(err);
+    });
+}
 
 function template(total) {
-return `
+  return `
 <div class="platanito-u">
     <img src="/img/Platano.png" alt="">
 </div>
@@ -213,6 +214,7 @@ return `
         <div class="checkbox">
             <input type="checkbox" name="check" id="check">
             <label for="check">Quiero delivery (Opcional)</label>
+            <p>Si marca la opción de delivery debe comunicarse via whatsapp para acordar la tarifa de enivo.</p>
         </div>
 
         <div class="sale-total">
@@ -228,7 +230,7 @@ return `
         <h4>Datos Bancarios</h4>
         <p>Elizabeth Urdaneta 26.814.385-8 <br>
             elizabethurdaneta66@gmail.com <br>
-            +56 920821237</p>
+            +56 930771575</p>
         <p>Banco Santander <br>
             Cuenta Corriente # 74-97737-5</p>
         <p>Banco estado <br>
@@ -260,5 +262,3 @@ return `
 </div>
 `;
 }
-
-
