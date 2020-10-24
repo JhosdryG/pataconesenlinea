@@ -1,0 +1,97 @@
+@import ../vars
+@import ../global
+@import ../mixins
+    
+body 
+    background-color: $secondary-light
+    font-family: Roboto, Arial
+
+.container
+    display: flex
+    justify-content: center
+    align-items: center
+    padding: 30px 0
+    @include tablet()
+        height: 100vh
+
+    .form_box
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: stretch
+        border-radius: 10px
+        overflow: hidden
+        @include tablet()
+            flex-direction: row
+
+        .welcome_box
+            display: flex
+            flex-direction: column
+            justify-content: center
+            align-items: center
+            background-color: $secondary
+            padding: 50px
+
+            .title 
+                margin: 0
+                text-align: center
+                font-size: 1.6rem
+                color: $primary-light
+                text-transform: uppercase
+
+            .lock_icon
+                margin: 20px
+                font-size: 3rem
+                padding: 25px
+                color: $secondary
+                background-color: $primary-light
+                border-radius: 50%
+            .para 
+                padding: 0 10px
+                text-align: center
+                color: $primary-light
+                line-height: 1.3rem
+
+
+    .form_login
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        padding: 50px
+        background-color: $primary
+
+        .form_title
+            margin: 10px 0
+            font-size: 1.5rem
+            color: $secondary
+
+        input[type="text"],input[type="password"]
+            margin: 5px 0
+            padding: 12px
+            color: #262626
+            border: none
+            border-radius: 7px
+            outline: none
+            font-size: 1rem
+            width: 100%
+        
+        input[type="submit"]
+            margin: 5px 0
+            width: 100%
+            padding: 10px
+            background-color: $secondary
+            color: $light
+            border: none
+            border-radius: 7px
+            font-size: 1.1rem
+            cursor: pointer
+
+            &:hover
+                background-color: $secondary-light
+         
+
+        .error_message
+            margin-top: 10px
+            font-size: 1rem
+            color: #cf3636

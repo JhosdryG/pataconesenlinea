@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Finaliza tu Compra - Patacones En Línea</title>
+    <link rel="icon" type="image/png" href="/img/Platanos.png">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/global.css">
+    <link rel="stylesheet" href="/css/sale.css">
+    <link rel="stylesheet" href="/css/loader.css">
+        {{!-- Sweet Alert CDN --}}
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+</head>
+
+<body>
+    <header>
+        <nav id="navegacion">
+            <div class="container">
+                <a href="/">
+                    <img src="/img/Logo-Nuevo.png" alt="Logotipo Pataconesonline.cl" class="logo" />
+                </a>
+
+                <ul id="menu">
+                    <li><a href="/cart">Volver</a></li>
+                </ul>
+
+                <div class="mobile-menu" id="menuButton">
+                    <a href="#navegacion">
+                        <img src="/img/menu-mobile.svg" alt="Icono Menu">
+                    </a>
+                </div>
+
+                <a href="/cart" class="cart_link">
+                    <img src="/img/Cart.svg" alt="Carrito" class="cart-i">
+                    <span id="cart_counter">0</span>
+                </a>
+            </div>
+        </nav>
+    </header>
+        <a href="https://api.whatsapp.com/send?phone=56920821237&text=Me%20interesan%20sus%20productos!" class="fab fa-whatsapp"></a>
+    <main id="sale" class="container section">
+        <h3>Formulario de venta</h3>
+        <p class="text-sale">Por favor ingresa tus datos personales, de contacto y la referencia bancaría para finalizar
+            su pedido y
+            ponernos en contacto con usted </p>
+
+        <div class="sale" id="saleRender">
+                <div class="loader">
+                    <div class="lds-dual-ring"></div>
+                </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="logo-footer">
+            <img src="/img/Logo-Nuevo.png" alt="Logotipo">
+        </div>
+        <div class="social-media">
+            <p>Contáctanos +56 920821237</p>
+            <img src="/img/IG.svg" alt="Instagram">
+            <p>@pataconesenlinea.cl</p>
+        </div>
+        <p class="copy">pataconesenlinea.cl ® Todos los derechos reservados</p>
+    </footer>
+    <script src="https://kit.fontawesome.com/78441fd608.js" crossorigin="anonymous"></script>
+    <script src="/scripts/sale.js"></script>
+    <script src="https://kit.fontawesome.com/78441fd608.js" crossorigin="anonymous"></script>
+</body>
+</html>
