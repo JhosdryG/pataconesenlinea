@@ -212,8 +212,10 @@ function template(total) {
         <textarea  id="mensaje" cols="30" rows="10"></textarea>
 
         <div class="checkbox">
-            <input type="checkbox" name="check" id="check">
-            <label for="check">Quiero delivery (Opcional)</label>
+        <label for="check">
+        <input type="checkbox" name="check" id="check">
+            Quiero delivery (Opcional)
+            </label>
             <p>Si marca la opción de delivery debe comunicarse via whatsapp para acordar la tarifa de enivo.</p>
         </div>
 

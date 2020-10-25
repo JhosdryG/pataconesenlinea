@@ -126,12 +126,15 @@ textarea {
 
 .checkbox {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   margin-bottom: 3rem;
 }
 
 .checkbox label {
-  margin-bottom: 0;
+  display: flex;
+
+  margin-bottom: 20px;
 }
 
 .form-sale input[type="checkbox"] {
